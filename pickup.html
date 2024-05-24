@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Pickup</title>
+    <link rel="stylesheet" href="css/pickupstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Donation Pickup</h1>
+        <nav>
+            <a href="AllRequests.html">Home</a>
+            <a href="index.html">Logout</a>
+        </br>
+    </br>
+    <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        </nav>
+
+        <div>
+            <h2>Schedule Selection</h2>
+            <label for="pickupTime">Pickup Time:</label>
+            <input type="datetime-local" id="pickupTime">
+        </div>
+
+        <div>
+            <h2>Vehicle Selection</h2>
+            <label for="vehicleSelect">Please choose a vehicle:</label>
+            <select id="vehicleSelect">
+                <option value="choose" selected>Please choose a vehicle</option>
+                <option value="truck">Truck</option>
+                <option value="car">Car</option>
+                <option value="motorcycle">Motorcycle</option>
+            </select>
+        </div>
+
+        <div id="etaContainer" style="display: none;">
+            <h2>Estimated Time of Arrival (ETA)</h2>
+            <p id="eta"></p>
+            <p id="etaTime"></p>
+        </div>
+
+        <div id="arrivalMessage" style="display: none;">
+            <h2>Driver Arrival</h2>
+            <p id="arrivalMessageText"></p>
+        </div>
+
+        <button id="schedulePickupBtn">Schedule Pickup</button>
+    </div>
+
+    <script src="js/pickup.js"></script>
+</body>
+</html>

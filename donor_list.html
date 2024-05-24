@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            /*background-color: #f0f0f0;*/
+        }
+
+        .donor-list-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .donor-list-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .donor {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .donor h3 {
+            margin-bottom: 5px;
+        }
+
+        .donor p {
+            margin: 5px 0;
+        }
+        
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-buttons" style="text-align: center; margin-top: 20px;">
+        <button onclick="navigateBack()">&#9664;</button> <!-- Left arrow -->
+        <button onclick="navigateNext()">&#9654;</button> <!-- Right arrow -->
+    </div>
+    <div class="donor-list-container">
+        <h2>View Donors List</h2>
+        <div class="donor">
+            <h3>Doctor Ahmed Mohamed</h3>
+            <p>Age: 35</p>
+            <p>Address: 123 Mostafa el Nahas, Cairo</p>
+            <p>Mobile Number: 123-456-7890</p>
+            <p>Work Experience: 10 years</p>
+        </div>
+        <div class="donor">
+            <h3>Teacher Nada Ayman</h3>
+            <p>Age: 28</p>
+            <p>Address: 45 Abas el akad, Cairo</p>
+            <p>Mobile Number: 987-654-3210</p>
+            <p>Work Experience: 5 years</p>
+        </div>
+        <div class="donor">
+            <h3>Teacher Khaled Ahmed</h3>
+            <p>Age: 45</p>
+            <p>Address: Montaza, Alex</p>
+            <p>Mobile Number: 987-654-3210</p>
+            <p>Work Experience: 12 years</p>
+        </div>
+        <div class="donor">
+            <h3>Doctor Karim Ayman</h3>
+            <p>Age: 25</p>
+            <p>Address: Giza, Al-haram</p>
+            <p>Mobile Number: 987-654-3210</p>
+            <p>Work Experience: 2 years</p>
+        </div>
+        <!-- Add more donors as needed -->
+    </div>
+
+    <script>
+
+        function navigateBack() {
+            // Navigate back in the history
+            window.history.back();
+            console.log("Navigating back.");
+        }
+
+        function navigateNext() {
+            // Navigate forward in the history
+            window.history.forward();
+            console.log("Navigating forward.");
+        }
+    </script>
+</body>
+</html>

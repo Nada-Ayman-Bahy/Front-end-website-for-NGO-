@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Requests</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="css/Subj.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/lecture.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <header>
+            <span class="login100-form-logo">
+                <img src="vendor/logo.jpg" alt="Logo">
+            </span>
+            <h1>Teaching Posts</h1>
+            <!-- Home page icon -->
+        
+            <header1>
+                <nav>
+                    <a href="AllRequests.html">Home</a>
+                    <a href="index.html">Logout</a>
+                </nav>
+            </header1>
+        </header>
+
+        <main>
+            <h1>Teaching Probonos</h1>
+            <div id="teaching">
+                <h2>Volunteering teaching preferences!</h2>
+                <div class="input-group">
+                    <label for="Subject">Subject:</label>
+                    <input class="text" type="text" id="Subject" name="Subject" placeholder="Subject" required="">
+                </div>
+                <div class="input-group">
+                    <label for="probonoClasses">Probono Classes:</label>
+                    <input class="text" type="number" id="probonoClasses" name="probonoClasses" placeholder="Probono Classes" required="">
+                </div>
+                <div class="input-group">
+                    <label for="privProbonoStudents">Private Probono Students:</label>
+                    <input class="text" type="number" id="privProbonoStudents" name="privProbonoStudents" placeholder="Private Probono Students" required="">
+                </div>
+                <button id="submitbutton">Submit</button>
+            </div>
+            <div id="donationList">
+                <!-- Donation requests will be dynamically populated here -->
+            </div>
+        </main>
+    </div>
+    <script src="js/subjects.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

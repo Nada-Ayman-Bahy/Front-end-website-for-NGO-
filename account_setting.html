@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            /*background-color: #f0f0f0;*/
+        }
+
+        .account-settings-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .account-settings-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: calc(100% - 22px); /* Adjust the width of the input fields */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #change-password-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #change-password-button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .error-message {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-buttons" style="text-align: center; margin-top: 20px;">
+        <button onclick="navigateBack()">&#9664;</button> <!-- Left arrow -->
+        <button onclick="navigateNext()">&#9654;</button> <!-- Right arrow -->
+    </div>
+    <div class="account-settings-container">
+        <h2>Password Management</h2>
+        <div class="form-group">
+            <label for="old-password">Old Password:</label>
+            <input type="password" id="old-password" name="old-password">
+        </div>
+        <div class="form-group">
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password" oninput="validatePassword()">
+            <div id="password-requirements" style="font-size: 12px; color: #888;"></div>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirm New Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+        </div>
+        <button id="change-password-button" onclick="changePassword()">Change Password</button>
+        <div class="message" id="password-change-message"></div>
+    </div>
+
+    <script>
+        function validatePassword() {
+            var password = document.getElementById('new-password').value;
+            var requirements = document.getElementById('password-requirements');
+
+            // Regular expressions for password requirements
+            var lengthRegex = /.{8,}/;
+            var uppercaseRegex = /[A-Z]/;
+            var lowercaseRegex = /[a-z]/;
+
+            // Check if password meets all requirements
+            var meetsRequirements = lengthRegex.test(password) &&
+                                    uppercaseRegex.test(password) &&
+                                    lowercaseRegex.test(password);
+
+            // Display requirements status
+            if (meetsRequirements) {
+                requirements.style.color = '#28a745';
+                requirements.textContent = 'Password meets requirements.';
+            } else {
+                requirements.style.color = '#dc3545';
+                requirements.textContent = 'Password must be at least 8 characters long, contain at least one uppercase letter, and one lowercase letter.';
+            }
+
+            return meetsRequirements; // Return whether password meets requirements
+        }
+
+        function changePassword() {
+            var oldPassword = document.getElementById('old-password').value;
+            var newPassword = document.getElementById('new-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            // Check if fields are empty
+            if (oldPassword === "" || newPassword === "" || confirmPassword === "") {
+                showMessage("Please fill in all fields.", "error");
+                return;
+            }
+
+            // Check if new password meets requirements
+            if (!validatePassword()) {
+                showMessage("New password does not meet requirements.", "error");
+                return;
+            }
+
+            // Check if new password matches confirm password
+            if (newPassword !== confirmPassword) {
+                showMessage("New password and confirm password do not match.", "error");
+                return;
+            }
+
+            // Here you can add code to handle changing the password
+            // For demonstration, I'm just showing a success message
+            showMessage("Password changed successfully.", "success");
+        }
+
+        function showMessage(message, type) {
+            var messageElement = document.getElementById('password-change-message');
+            messageElement.textContent = message;
+            messageElement.className = "message " + type + "-message";
+            messageElement.style.display = 'block';
+        }
+        function navigateBack() {
+            // Navigate back in the history
+            window.history.back();
+            console.log("Navigating back.");
+        }
+
+        function navigateNext() {
+            // Navigate forward in the history
+            window.history.forward();
+            console.log("Navigating forward.");
+        }
+    </script>
+</body>
+</html>

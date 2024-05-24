@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Pictures/Background.jpg'); /* Add background image URL */            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            /*background-color: #f0f0f0;*/
+        }
+
+        .organization-details-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .organization-details-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .details {
+            margin-bottom: 10px;
+        }
+
+        .details label {
+            font-weight: bold;
+        }
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3c584;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #f3c584;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+      </div>
+    <div class="organization-details-container">
+        <h2>Organization Details</h2>
+        <div class="details">
+            <label>Organization Name:</label>
+            <span id="organization-name"></span>
+        </div>
+        <div class="details">
+            <label>Contact Details:</label>
+            <span id="contact-details"></span>
+        </div>
+        <div class="details">
+            <label>Address:</label>
+            <span id="address"></span>
+        </div>
+        <div class="details">
+            <label>Location:</label>
+            <div id="map" style="height: 300px;"></div> <!-- Google Map will be displayed here -->
+        </div>
+        <div class="details">
+            <label>Organization Type:</label>
+            <span id="organization-type"></span>
+        </div>
+    </div>
+
+    <!-- Replace the API_KEY with your Google Maps API Key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRgLdTi3GtA-mujwLmBY8SehO0M7zQA-w"></script>
+    <script>
+        var organizationDetails = {
+            "Health Organization": {
+                name: "Harmony Health",
+                contactDetails: "Contact Person: Mostafa Maged, Phone: 123-456-7890, Email: m23@gmail.com",
+                address: "Cairo, Egypt",
+                location: { lat: 40.712776, lng: -74.005974 }, // Sample coordinates for New York City
+                organizationType: "Hospital"
+            },
+            "School Organization": {
+                name: "Future Education",
+                contactDetails: "Contact Person: Sarah Gasser, Phone: 987-654-3210, Email: Sarah22@gmail.com",
+                address: "Cairo, Egypt",
+                location: { lat: 34.052235, lng: -118.243683 }, // Sample coordinates for Los Angeles
+                organizationType: "Public School"
+            },
+            "Refugee Organization": {
+                name: "Hope Haven",
+                contactDetails: "Contact Person: Michael Georege, Phone: 555-123-4567, Email: michael@gmail.com",
+                address: "Cairo, Egypt",
+                location: { lat: 51.507351, lng: -0.127758 }, // Sample coordinates for London
+                organizationType: "Charity"
+            },
+            "Orphanage Organization": {
+                name: "Children's Home",
+                contactDetails: "Contact Person: Yasmin Fady, Phone: 333-444-5555, Email: YasF22@gmail.com",
+                address: "Cairo, Egypt",
+                location: { lat: 40.712776, lng: -74.005974 }, // Sample coordinates for New York City
+                organizationType: "Orphanage"
+            }
+        };
+
+        // Get the selected organization name from the URL query parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var organizationName = urlParams.get('organization');
+
+        // Display the details for the selected organization
+        if (organizationDetails.hasOwnProperty(organizationName)) {
+            var details = organizationDetails[organizationName];
+            document.getElementById('organization-name').innerText = details.name;
+            document.getElementById('contact-details').innerText = details.contactDetails;
+            document.getElementById('address').innerText = details.address;
+            document.getElementById('organization-type').innerText = details.organizationType;
+
+            var cairoLocation = { lat: 30.0444, lng: 31.2357 };
+
+// Create a map object and specify the DOM element for display.
+var map = new google.maps.Map(document.getElementById('map'), {
+    center: cairoLocation,
+    zoom: 12
+});
+
+// Add marker for the organization's location
+var marker = new google.maps.Marker({
+    position: cairoLocation,
+    map: map,
+    title: "Cairo, Egypt"
+});
+        } else {
+            alert("Organization details not found.");
+        }
+
+        document.getElementById('backToRequestsBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        history.back(); // Go back to the previous page
+    });
+
+    </script>
+</body>
+</html>

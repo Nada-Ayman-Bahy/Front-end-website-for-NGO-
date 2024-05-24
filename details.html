@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Item Details</title>
+    <link rel="stylesheet" href="css/deets.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/c.jpg');">
+        <div class="wrap-login100">
+            <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+            <form class="login100-form validate-form">
+                <header>
+                    <span class="login100-form-logo">
+                        <img src="vendor/logo.jpg" alt="Logo">
+                    </span>
+                    <h1>Clothing Item Details </h1>
+                    <!-- Navigation buttons -->
+                    <nav>
+                        <a href="AllRequests.html">Home</a>
+                        <a href="index.html">Logout</a>
+                    </br>
+                </br>
+
+                    </nav>
+                </header>
+            </form>
+        </div>
+   
+        <main>
+            <div class="details-container">
+                <h2 id="itemName"></h2>
+                <p>Type: <span id="itemType"></span></p>
+                <p>Gender: <span id="itemGender"></span></p>
+                <p>Season: <span id="itemSeason"></span></p>
+                <p>Age: <span id="itemAge"></span></p>
+                <p>Material: <span id="itemMaterial"></span></p>
+                <p>Quantity Requested: <span id="itemQuantity"></span></p>
+                <div class="details-image">
+                    <img id="Pic"  alt="Stationary Image">
+                </div>
+                <label for="quantityInput">Enter Quantity to Donate:</label>
+                <input type="number" id="quantityInput" min="1" placeholder="1"><br>
+                <button id="donation">Donate</button>
+                <!-- Navigation or back button to return to the main page -->
+            </div>
+        </main>
+    </div>
+    <script src="js/ClothesdetailsView.js"></script> <!-- Link to your JavaScript file for details -->
+</body>
+</html>

@@ -1,0 +1,308 @@
+/* styles.css */
+.login100-form-logo {
+    font-size: 60px; 
+    color: #333333;
+    display: flex;
+    justify-content: flex-start; /* Align the logo to the left */
+    align-items: LEFT; /* Center vertically */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px; /* Add some margin between the logo and the data */
+}
+
+.container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+
+    padding: 15px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+}
+
+h1,
+a {
+    margin: 0; /* Remove default margin */
+    padding: 5px 10px; /* Adjust padding */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+
+button {
+    padding: 12px 24px;
+    background-color: rgb(219, 126, 149);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #2b2f6c;
+    transform: scale(1.1);
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+     /* Background image and blur effect */
+     /* Background image */
+     background-image: url('Pictures/MedSupplies.jpg');
+     background-size: cover;
+     background-position: center;
+ }
+ 
+ .blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Pictures/MedSupplies.jpg'); /* Blurred version of your image */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure the overlay is behind content */
+    filter: blur(10px); /* Increase the blur intensity to 10px or adjust as needed */
+    opacity: 0.5; /* 50% opacity for a semi-transparent effect */
+}
+.icon-link {
+    margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+
+header {
+    background-color: #E4B7A0 ;
+    color: #fff;
+    padding: 5px 0; /* Reduced padding */
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure the header is above the background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: left; /* Center the data horizontally */
+    align-items: center; /* Center the data vertically */
+}
+
+/* Button Styles */
+button {
+    padding: 12px 24px;
+    background-color: rgb(219, 126, 149);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #2b2f6c;
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu Styles */
+select {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #9D6C82;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+select:hover,
+select:focus {
+    border-color: #564779;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.clothing-item h3 {
+    margin-bottom: 5px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 10px; /* Gap between grid items */
+}
+
+.grid-item {
+    border:#f0f0f0;
+    padding: 8px;
+}
+
+
+.details-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #0300b3;
+    cursor: pointer;
+}
+
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#clothingList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Styles for specific elements */
+.clothing-item h3 {
+    color: #e75349;
+    margin-bottom: 5px;
+}
+
+.clothing-item p {
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #clothingList {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.details-content {
+    max-width: 600px; /* Set a maximum width for the content */
+    margin-right: 20px; /* Add some margin to separate from the image */
+}
+
+.details-image {
+    margin-top: 20px; /* Adjust the top margin as needed */
+    width: 200px; /* Set a smaller width for the image container */
+}
+
+.details-image img {
+    max-width: 100%; /* Make sure the image doesn't exceed its container's width */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+#backToRequestsBtn {
+    background-color: #A45C40;/* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #E4B7A0; /* Darker blue on hover */
+}
+.back-btn {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 10px; /* Position it to the very left */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size as needed */
+    padding: 5px 10px; /* Padding for the button */
+    background-color: #333; /* Button background color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Styles for the header and its content */
+header {
+    margin-top: 40px; /* Add space between the button and header */
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px; /* Adjust font size as needed */
+}
+
+nav a {
+    margin: 0 10px; /* Add spacing between navigation links */
+    color: #333; /* Text color for navigation links */
+    text-decoration: none; /* Remove underline */
+}
+
+input[type="text"] {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #9D6C82;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color: #564779;
+}

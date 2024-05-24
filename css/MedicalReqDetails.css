@@ -1,0 +1,75 @@
+/* medical-details.css */
+
+/* Import styles from styles.css */
+@import url("MedicalStyles.css");
+
+.details-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.details-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.details-image {
+    width: 250px;
+}
+
+.details-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+header {
+    background-color: #E4B7A0 ;
+    color: #fff;
+    padding: 5px 0; /* Reduced padding */
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure the header is above the background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the data horizontally */
+    align-items: center; /* Center the data vertically */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+button {
+    padding: 12px 24px;
+    background-color: #E4B7A0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #A45C40;
+    transform: scale(1.1);
+}
+#backToRequestsBtn {
+    background-color: #E4B7A0; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #A45C40; /* Darker background color on hover */
+    transform: scale(1.1); /* Scale the button on hover */
+}
+
+

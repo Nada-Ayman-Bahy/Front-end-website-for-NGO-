@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Supplies Donation Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL /            background-size: cover; / Cover the entire viewport */
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin: 10px 0; 
+            font-size: 24px; 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        label {
+            margin-bottom: 5px; /* Adjusted margin */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 10px; /* Adjusted margin */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            width: 100%; /* Adjusted width */
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 150px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            display: none;
+            color: green;
+            margin-top: 10px; /* Adjusted margin */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <a href="createpost.html" class="back-button" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    <div class="container">
+        <h2>Enter School Supplies Donation Details</h2>
+        <form id="donation-form">
+            <label for="item">Item Name:</label><br>
+            <input type="text" id="item" name="item" required><br>
+
+            <label for="type">Type:</label><br>
+            <input type="text" id="type" name="type" required><br>
+
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" required><br>
+
+            <label for="photo">Photo:</label><br>
+            <input type="file" id="photo" name="photo" accept="image/*" required><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById('donation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            var formData = new FormData(this);
+
+            document.getElementById('message').style.display = 'block';
+            alert("School supplies donation post submitted successfully!");
+        });
+    </script>
+</body>
+</html>

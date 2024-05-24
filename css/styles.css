@@ -1,0 +1,429 @@
+/* styles.css */
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+     /* Background image and blur effect */
+     /* Background image */
+     background-image: url('Pictures/donation.jpg');
+     background-size: cover;
+     background-position: center;
+ }
+ .container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+   
+    padding: 15px;
+  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+  }
+  .logoutBtn {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.transparent-container {
+    background-color: rgba(255, 255, 255, 1); /* Full opacity white background */
+    padding: 15px;
+    border-radius: 10px;
+}
+ .blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure the overlay is behind content */
+    filter: blur(10px); /* Increase the blur intensity to 10px or adjust as needed */
+    opacity: 0.5; /* 50% opacity for a semi-transparent effect */
+
+
+ }
+
+
+
+/* Add styles for the header links container */
+.header-links-container {
+    display: flex;
+    flex-direction: column; /* Arrange links vertically */
+    justify-content: flex-start; /* Align links to the top */
+    align-items: flex-start; /* Align links to the left */
+    flex-grow: 1; /* Allow the container to grow */
+    margin-left: 10px; /* Add margin to separate from the logo */
+}
+
+
+/* Style the header links */
+.header-links-container a {
+    color: #fff;
+    margin-left: 10px; /* Add spacing between links */
+    text-decoration: none;
+}
+
+/* Hover effect for header links */
+.header-links-container a:hover {
+    text-decoration: underline;
+}
+
+#category option {
+    font-size: 16px; /* Increase font size for dropdown options */
+    background-color: linear-gradient(to right ,#A45C40, #E4B7A0); /* Same color as dropdown background */
+    color: black; /* Text color for dropdown options */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a subtle and elegant font family */
+    font-weight: normal; /* Use normal font weight */
+    letter-spacing: 0.5px; /* Add slight spacing between letters */
+}
+#searchAndFilter {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Align items vertically */
+}
+
+#searchBar,
+#filterSection {
+    display: flex; /* Use flexbox for inner items */
+    align-items: center; /* Align items vertically */
+}
+
+#searchInput,
+#categoryFilter {
+    height: 45px; /* Set the height to match the drop-down menu */
+    padding: 0 15px; /* Adjust padding for the input and select */
+    margin-right: 15px; /* Add margin between the input and select */
+    box-sizing: border-box; /* Include padding and border in the total width */
+    border: 2px solid #C38370; /* Set border properties */
+    border-radius: 25px; /* Apply border-radius for rounded corners */
+    background: transparent; /* Set background color to transparent */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use specified font family */
+    font-size: 16px; /* Set font size */
+    color: #333; /* Set text color */
+    line-height: 1.2; /* Set line height */
+}
+#backToRequestsBtn {
+    background-color: #E4B7A0; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #A45C40; /* Darker background color on hover */
+    transform: scale(1.1); /* Scale the button on hover */
+}
+
+#filterBtn {
+    padding: 12px 24px;
+    background-color: #A45C40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* styles.css */
+
+/* Add styles for logo and logout container */
+.logo-container {
+    
+    top: 10px;
+    left: 10px;
+}
+
+.navigation-buttons {
+    
+    nav-down: 10px;
+    left: 10px;
+}
+
+.logout-container {
+   
+    top: 10px;
+    right: 10px;
+}
+
+
+/* Make navigation buttons smaller */
+.navigation-buttons button {
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+
+.logo {
+    width: 40px; /* Adjust the width as needed */
+    display: block;
+    border-radius: 50%; /* Make the logo circular */
+    overflow: hidden; /* Hide overflow for circular shape */
+}
+.navigation-buttons button:hover {
+    background-color: #A45C40,;
+}
+
+.logo img {
+    width: 100%; /* Ensure the image fills the circular container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+header {
+    background-color: #E4B7A0 ;
+    color: #fff;
+    padding: 5px 0; /* Reduced padding */
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure the header is above the background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the data horizontally */
+    align-items: center; /* Center the data vertically */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px; /* Add margin to push the grid down */
+}
+
+.grid-item {
+    border: 2px solid #ccc; /* Border around each grid item */
+    border-radius: 5px; /* Rounded corners for each grid item */
+    padding: 10px; /* Padding inside each grid item */
+}
+
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.clothing-item h3 {
+    margin-bottom: 5px;
+}
+
+
+.details-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #0300b3;
+    cursor: pointer;
+}
+
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#clothingList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Styles for specific elements */
+.clothing-item h3 {
+    color: #432f04;
+    margin-bottom: 5px;
+}
+
+.clothing-item p {
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #clothingList {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color: #C38370;
+}
+
+input[type="text"] {
+    width: 45px;
+    height: 45px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+    border: 2px solid #C38370;
+    border-radius: 25px;
+    background: transparent;
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+}
+select {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #C38370;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+select:hover,
+select:focus {
+    border-color: #A45C40 ;
+}
+input[type="text"],
+input[type="number"] {
+    width: auto; /* Set width to auto */
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/* styles.css */
+.login100-form-logo {
+    font-size: 60px; 
+    color: #333333;
+    display: flex;
+    justify-content: flex-start; /* Align the logo to the left */
+    align-items: stretch; /* Center vertically */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px; /* Add some margin between the logo and the data */
+}
+
+#backToRequestsBtn {
+    background-color:#A45C40;/* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #E4B7A0; /* Darker blue on hover */
+    
+}
+.text {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #A45C40;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+.text:hover,
+.text:focus {
+    border-color: A45C40;
+}
+
+header {
+    background-color: #E4B7A0 ;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+
+    padding: 15px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+}
+
+h1,
+a {
+    margin: 0; /* Remove default margin */
+    padding: 5px 10px; /* Adjust padding */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: center;
+    z-index: 1;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+button {
+    padding: 12px 24px;
+    background-color: #A45C40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #E4B7A0;
+    transform: scale(1.1);
+}

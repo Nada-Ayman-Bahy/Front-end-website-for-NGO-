@@ -1,0 +1,202 @@
+/* styles.css */
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* Background image and blur effect */
+    /* Background image */
+    background-image: url('Pictures/study.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Pictures/study.jpg'); /* Blurred version of your image */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure the overlay is behind content */
+    filter: blur(10px); /* Increase the blur intensity to 10px or adjust as needed */
+    opacity: 0.5; /* 50% opacity for a semi-transparent effect */
+}
+
+.icon-link {
+    margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+.login100-form-logo {
+    font-size: 60px; 
+    color: #333333;
+    display: flex;
+    justify-content: flex-start; /* Align the logo to the left */
+    align-items: LEFT; /* Center vertically */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px; /* Add some margin between the logo and the data */
+}
+header {
+    background-color: #E4B7A0 ;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns, each taking 50% of the width */
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 50%; /* Set the width to 50% of the webpage */
+    margin: 0 auto; /* Center the grid horizontally */
+}
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+ 
+
+.clothing-item h3 {
+    color: #e75349;
+    margin-bottom: 5px;
+}
+
+.clothing-item p {
+    margin: 0;
+}
+
+.details-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #0300b3;
+    cursor: pointer;
+}
+
+main {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr auto; /* One column for data, one column for picture */
+    gap: 10px; /* Gap between grid items */
+}
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Styles for specific elements */
+.clothing-item h3 {
+    color: #e75349;
+    margin-bottom: 5px;
+}
+
+.clothing-item p {
+    margin: 0;
+}
+
+.details-image {
+    width: 100%; /* Take the entire width of the second column */
+    margin-left: auto; /* Push the image to the right */
+}
+
+.details-image img {
+    max-width: 100%; /* Make sure the image doesn't exceed its container's width */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+#backToRequestsBtn {
+    background-color:#A45C40;/* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #E4B7A0; /* Darker blue on hover */
+    
+}
+button {
+    padding: 12px 24px;
+    background-color: #A45C40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #E4B7A0;
+}
+.details-image img {
+    width: 250px; /* Increase the width of the image */
+    height: 250px; /* Increase the height of the image */
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column layout */
+    gap: 5px; /* Reduce the gap between grid items */
+}
+
+/* Adjust line spacing for text elements */
+.details-container p {
+    margin: 5px 0; /* Less margin for top and bottom */
+}
+#backToRequestsBtn {
+    background-color:#A45C40;/* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #E4B7A0; /* Darker blue on hover */
+}

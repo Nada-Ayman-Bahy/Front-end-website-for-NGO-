@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Donor Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Pictures/nada.jpg');
+            background-size: cover;
+            text-align: center;
+            padding-top: 50px;
+            margin: 0; /* Added to remove default margin */
+        }
+
+        header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="ViewDonorDetails.html" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    </header>
+    <div class="container">
+        <h2>Donor Details</h2>
+        <p>Name: <span id="donorName"></span></p>
+        <p>Address: <span id="address"></span></p>
+        <p>Specialties: <span id="specialties"></span></p>
+        <p>Age: <span id="age"></span></p>
+        <textarea id="acknowledgeMessage" placeholder="Write your acknowledge message here"></textarea>
+        <button class="button" onclick="sendAcknowledge()">Send Acknowledge</button>
+    </div>
+
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        var donorDetails = {
+            "Dr. John Smith": {
+                "address": "123 Main St",
+                "specialties": "Cardiology, Pediatrics",
+                "age": 45
+            },
+            "Dr. Emily Johnson": {
+                "address": "456 Elm St",
+                "specialties": "Orthopedics, Dermatology",
+                "age": 38
+            },
+            "Mr. David Brown": {
+                "address": "789 Oak St",
+                "specialties": "Mathematics, Literature",
+                "age": 50
+            },
+            "Ms. Sarah Wilson": {
+                "address": "321 Pine St",
+                "specialties": "Science, History",
+                "age": 42
+            }
+        };
+
+        var donorName = getParameterByName('name');
+        if (donorName && donorDetails.hasOwnProperty(donorName)) {
+            document.getElementById('donorName').textContent = donorName;
+            document.getElementById('address').textContent = donorDetails[donorName].address;
+            document.getElementById('specialties').textContent = donorDetails[donorName].specialties;
+            document.getElementById('age').textContent = donorDetails[donorName].age;
+        }
+
+        function sendAcknowledge() {
+            alert("Acknowledge is sent successfully!");
+            // You can add code here to send the acknowledge message to the donor
+        }
+    </script>
+</body>
+</html>

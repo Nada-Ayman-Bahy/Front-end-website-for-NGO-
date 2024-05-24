@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="css/QuantityDon.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <button id="backBtn">Back</button>
+        <button id="homeBtn">Home</button>
+        <button id="logoutBtn">Logout</button>
+    </header>
+    <main>
+    <div class="donation-container">
+        <h1>Donation Confirmation</h1>
+        <div id="confirmationMessage"></div>
+        <label for="quantityInput">Enter Quantity to Donate:</label><br>
+        <input type="number" id="quantityInput" min="1" placeholder="1"><br>
+        <button id="donateConfirmBtn">Donate</button>
+    </div>
+</main>
+    <script src="js/DonationQuantity.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

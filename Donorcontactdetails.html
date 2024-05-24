@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Contact Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Pictures/nada.jpg');
+            background-size: cover;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Donor Contact Details</h2>
+        <p>Name: <span id="donorName"></span></p>
+        <p>Address: <span id="address"></span></p>
+        <p>Mobile Number: <span id="mobileNumber"></span></p>
+        <p>Email: <span id="email"></span></p>
+        <p>Age: <span id="age"></span></p>
+        <button class="button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        // Extract donor details from URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const donorName = urlParams.get('name');
+
+        // Dummy donor details (replace with actual data)
+        const donorDetails = {
+            "Dr. John Smith": {
+                "Address": "123 Medical St",
+                "MobileNumber": "1234567890",
+                "Email": "johnsmith@example.com",
+                "Age": 45
+            },
+            "Dr. Emily Johnson": {
+                "Address": "456 Hospital Rd",
+                "MobileNumber": "9876543210",
+                "Email": "emilyjohnson@example.com",
+                "Age": 38
+            },
+            "Mr. David Brown": {
+                "Address": "789 School Ave",
+                "MobileNumber": "5551234567",
+                "Email": "davidbrown@example.com",
+                "Age": 30
+            },
+            "Ms. Sarah Wilson": {
+                "Address": "321 Education Blvd",
+                "MobileNumber": "1119876543",
+                "Email": "sarahwilson@example.com",
+                "Age": 28
+            }
+        };
+
+        // Display donor details
+        document.getElementById("donorName").textContent = donorName;
+        document.getElementById("address").textContent = donorDetails[donorName]["Address"];
+        document.getElementById("mobileNumber").textContent = donorDetails[donorName]["MobileNumber"];
+        document.getElementById("email").textContent = donorDetails[donorName]["Email"];
+        document.getElementById("age").textContent = donorDetails[donorName]["Age"];
+    </script>
+</body>
+</html>

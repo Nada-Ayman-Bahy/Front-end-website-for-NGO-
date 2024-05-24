@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Dropoff</title>
+    <link rel="stylesheet" href="css/pickupstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Donation Dropoff</h1>
+        
+        <div>
+            <h2>Schedule Selection</h2>
+            <label for="dropoffTime">Dropoff Time:</label>
+            <input type="datetime-local" id="dropoffTime">
+        </div>
+
+        <div id="etaContainer" style="display: none;">
+            <h2>Estimated Time of Arrival (ETA)</h2>
+            <p id="eta"></p>
+            <p id="etaTime"></p>
+        </div>
+
+        <div id="arrivalMessage" style="display: none;">
+            <h2>Driver Arrival</h2>
+            <p id="arrivalMessageText"></p>
+        </div>
+
+        <button id="scheduledDropoffBtn">Schedule Dropoff</button>
+    </div>
+
+    <script src="js/dropoff.js"></script>
+</body>
+</html>

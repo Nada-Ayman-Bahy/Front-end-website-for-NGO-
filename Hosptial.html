@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Location in Egypt</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Your custom CSS file -->
+    <link rel="stylesheet" href="css/Clinc.css">
+</head>
+<body>
+  <div class="container-login100" style="background-image: url('Pictures/Background.jpg');">
+    <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+    <header>
+        <span class="login100-form-logo">
+            <img src="vendor/logo.jpg" alt="Logo">
+        </span>
+        <h1>Clinc Location</h1>
+        <!-- Home page icon -->
+        <header1>
+            <nav>
+                <a href="AllRequests.html">Home</a>
+                <a href="index.html">Logout</a>
+            </br>
+        </br>
+    </nav>
+        </header1>
+    </header>
+    <main>
+        <div class="details-container">
+            <div class="details-content">
+                <h2>My Location Details</h2>
+                <div>
+                  <label for="address">Clinic Address:</label>
+                  <input type="text" id="address" required>
+              </div>
+              <div>
+                  <label for="area">Area:</label>
+                  <input type="text" id="area" required>
+              </div>
+              <div>
+                  <label for="governorate">Governorate:</label>
+                  <input type="text" id="governorate" required>
+              </div>
+              <div>
+                  <label for="specialty">Specialty:</label>
+                  <input type="text" id="specialty" required>
+              </div>
+              <div>
+                  <label for="proBonoCases">Pro-Bono Cases:</label>
+                  <input type="number" id="proBonoCases" required>
+              </div>
+              <button type="submit" id="submit">Submit</button>
+            </div>
+            <div id="map" style="height: 400px;"></div> <!-- Map container -->
+        </div>
+    </main>
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Your custom JavaScript file -->
+    <script> document.addEventListener('DOMContentLoaded', function() {
+      // Retrieve clinic data from local storage
+      const clinicData = JSON.parse(localStorage.getItem('clinicData'));
+  
+      if (clinicData) {
+          // Display clinic data in the HTML elements
+          document.getElementById('address').textContent = clinicData.address;
+          document.getElementById('area').textContent = clinicData.area;
+          document.getElementById('governorate').textContent = clinicData.governorate;
+          document.getElementById('specialty').textContent = clinicData.specialty;
+          document.getElementById('proBonoCases').textContent = clinicData.proBonoCases;
+      } else {
+          console.log('No clinic data found in local storage.');
+      }
+  
+      // Initialize Leaflet map centered around Egypt
+      const map = L.map('map').setView([26.8206, 30.8025], 6);
+  
+      // Add OpenStreetMap tiles to the map
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+  
+      // Add a marker representing the clinic location
+      if (clinicData) {
+          const clinicLocation = [clinicData.latitude, clinicData.longitude]; // Assuming you have latitude and longitude in clinicData
+          L.marker(clinicLocation).addTo(map);
+      } else {
+          console.log('No clinic data found to display location on map.');
+      }
+  });
+  const submitButton = document.getElementById('submit');
+
+// Add a click event listener to the submit button
+submitButton.addEventListener('click', function() {
+    // Display an alert when the button is clicked
+    alert('You submitted your location');
+});
+document.getElementById('backToRequestsBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        history.back(); // Go back to the previous page
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submitbutton');
+    
+    submitButton.addEventListener('click', function(event) {
+        // Get the values of the input fields
+        var subject = document.getElementById('Subject').value.trim();
+        var probonoClasses = document.getElementById('probonoClasses').value.trim();
+        var privProbonoStudents = document.getElementById('privProbonoStudents').value.trim();
+
+        if (!subject || !probonoClasses || !privProbonoStudents) {
+            // Display an alert message if any of the fields are empty or null
+            alert('Please fill in all fields.');
+            // Prevent form submission
+            event.preventDefault();
+        } else {
+            alert("You have successfully submitted!");
+        }
+    });
+});
+
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/Bookdeets.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/MED.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+        <header>
+            <span class="login100-form-logo">
+                <img src="vendor/logo.jpg" alt="Logo">
+            </span>
+            <h1>Pro-bono  Medical Case Details</h1>
+            <!-- Home page icon -->
+            <header1>
+                <nav>
+                    <a href="AllRequests.html">Home</a>
+                    <a href="index.html">Logout</a>
+                </br>
+            </br>
+
+                </nav>
+            </header1>
+        </header>
+        <main>
+            <div class="details-container">
+                <div class="details-content">
+                    <h2 id="itemName"></h2>
+                    <p>Patient Name : <span id="PatientName"></span></p>
+                    <p>Age: <span id="age"></span></p>
+                    <p>Gender: <span id="gen"></span></p>
+                    <p>Weight: <span id="wei"></span></p>
+                    <p>Location: <span id="loc"></span></p>
+                    <p>Address: <span id="add"></span></p>
+                    <p>Organization Name: <span id="org"></span></p>
+                    <p>Medical Speciality: <span id="spe"></span></p>
+                    <p>Case Description: <span id="des"></span></p>
+                    <button id="fulfillMedicalCaseBtn">Fulfill Medical Case</button>
+
+                </div>
+                
+                <div id="map" style="height: 400px;"></div> <!-- Map container -->
+            </div>
+            <div id="fulfillMedicalCaseConfirmation" style="display: none;">
+                <p>Are you sure you want to fulfill this medical case?</p>
+                <button id="confirmFulfillMedicalCaseBtn">Yes, Fulfill Medical Case</button>
+                <button id="cancelFulfillMedicalCaseBtn">Cancel</button>
+            </div>
+            <div id="fulfillmentMessage" style="display: none;"></div> <!-- Add this line -->
+        </main>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/MEDCASE.js"></script> <!-- Link to your JavaScript file for details -->
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL /            background-size: cover; / Cover the entire viewport */
+            color: #333; /* Adjusted text color */
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 18px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px; /* Increased font size */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+            font-size: 16px; /* Adjusted font size */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 15px; /* Adjusted margin */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            width: calc(100% - 22px);
+            font-size: 16px; /* Adjusted font size */
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            font-size: 16px; /* Adjusted font size */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="createpost.html" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    </header>
+    <h2>Enter Food Donation Details</h2>
+    <form id="food-donation-form">
+        <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="itemName" required>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+                <option value="Canned Foods">Canned Foods</option>
+                <option value="Fresh Meals">Fresh Meals</option>
+                <option value="Baked Goods">Baked Goods</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required><br>
+
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('food-donation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Handle form submission
+            
+            alert("Food donation post submitted successfully!");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="css/TeachingPosts.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/lecture.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <header>
+            <span class="login100-form-logo">
+                <img src="vendor/logo.jpg" alt="Logo">
+            </span>
+            <h1>View Details of Teaching Posts</h1>
+            <!-- Home page icon -->
+        
+            <header1>
+                <nav>
+                    <a href="AllRequests.html">Home</a>
+                    <a href="index.html">Logout</a>
+                </br>
+            </br>
+
+                </nav>
+            </header1>
+        </header>
+
+    <main>
+        <div id="teachingPostDetails">
+            <div id="teachingPostInfo">
+                <h2>Teaching Post Details</h2>
+                <p><strong>Subject:</strong> <span id="subjects"></span></p>
+                <p><strong>Number of Students:</strong> <span id="numStudents"></span></p>
+                <p><strong>Address:</strong> <span id="address"></span></p>
+                <button id="fulfillTeachingCaseBtn">Fulfill Teaching Case</button>
+            </div>
+            <div id="mapContainer">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6811959.042740537!2d26.707379486437033!3d26.49447940540163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458391dc74e09c9%3A0x7560e183acf68df2!2sEgypt!5e0!3m2!1sen!2sus!4v1646361281393!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div id="fulfillTeachingCaseConfirmation" style="display: none;">
+            <p>Are you sure you want to fulfill this teaching case?</p>
+            <button id="confirmFulfillTeachingCaseBtn">Yes, Fulfill Teaching Case</button>
+            <button id="cancelFulfillTeachingCaseBtn">Cancel</button>
+        </div>
+        <div id="fulfillmentMessage" style="display: none;"></div> <!-- Add this line -->
+    </main>
+</div>
+    <script src="js/TeachingDetails.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

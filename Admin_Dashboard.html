@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('Pictures/NadaBack.jpg'); /* Add background image URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            filter: blur(4px); /* Add blur effect */
+            opacity: 0.5; /* Adjust opacity as needed */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Add white shadow */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navigation-buttons {
+            position: absolute;
+            top: 20px; /* Adjust top margin as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff; /* Blue color */
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #0056b3; /* Darker shade of blue on hover */
+        }
+
+        .dashboard-container {
+            max-width: 600px;
+            margin: auto; /* Center the container horizontally */
+            margin-top: 100px; /* Adjust top margin as needed */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .dashboard-button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dashboard-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-buttons">
+        <button onclick="navigateBack()">&#9664;</button> <!-- Left arrow -->
+        <button onclick="navigateNext()">&#9654;</button> <!-- Right arrow -->
+    </div>
+    <div class="dashboard-container">
+        <h2>Dashboard</h2>
+        
+        <div class="button-container">
+            <button class="dashboard-button" onclick="navigateTo('submission.html')">Submissions Review Section</button>
+            <button class="dashboard-button" onclick="navigateTo('Request_management.html')">Request Management Section</button>
+            <button class="dashboard-button" onclick="navigateTo('account_management.html')">Account Management Section</button>
+            <button class="dashboard-button" onclick="navigateTo('account_setting.html')">Account settings</button>
+            <button class="dashboard-button" onclick="navigateTo('organization_list.html')">List of Organizations</button>
+            <button class="dashboard-button" onclick="navigateTo('donor_list.html')">List of Donors</button>
+            <button class="dashboard-button" onclick="navigateTo('registered_organization.html')">Registered Organization</button>
+            <!-- <button class="dashboard-button" onclick="navigateTo('organization_details.html')">Organization Details</button> -->
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(url) {
+            // Redirect to the specified URL
+            window.location.href = url;
+            console.log("Redirecting to: " + url);
+        }
+
+        function navigateBack() {
+            // Navigate back in the history
+            window.history.back();
+            console.log("Navigating back.");
+        }
+
+        function navigateNext() {
+            // Navigate forward in the history
+            window.history.forward();
+            console.log("Navigating forward.");
+        }
+    </script>
+</body>
+</html>

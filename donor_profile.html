@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Donor Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylee.css">
+  <style>
+    /* Custom CSS for grid layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      gap: 20px; /* Gap between grid items */
+    }
+
+    .grid-item {
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Donor Profile</h1>
+    <div class="button-container">
+
+      <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    </div>
+    <div class="grid-container" id="userDataGrid"></div>
+    <img id="profileImage" src="" width="250" height="250">
+    <div id="userData"></div>
+    <button onclick="redirectToUpdate()">Update Profile</button>
+    <button onclick="redirectToDelete()">Delete Profile</button>
+  </div>
+
+  <script>
+
+
+// Retrieve data from local storage or use predefined data
+// Retrieve data from local storage or use predefined data
+let userData = JSON.parse(localStorage.getItem('registrationData')) || saraJohnData;
+const userDataGrid = document.getElementById('userDataGrid');
+
+// Display user data in a grid
+for (const [key, value] of Object.entries(userData)) {
+  userDataGrid.innerHTML += `
+    <div class="grid-item"><strong>${key}:</strong> ${value}</div>
+  `;
+}
+
+// Set the image source based on the gender
+const profileImage = document.getElementById('profileImage');
+const gender = userData.gender;
+if (gender === 'Female') {
+  profileImage.src = 'Pictures/female.jpg'; // Change image source to female image
+} else if (gender === 'Male') {
+  profileImage.src = 'Pictures/male.jpg'; // Change image source to male image
+} else {
+  profileImage.src = 'Pictures/white.jpg';
+}
+
+
+    let formData = {};
+
+if (username === 'Sarah_John') {
+    // Doctor
+    formData = {
+        firstName: 'Sarah',
+        lastName: 'John',
+        email: 'sarah@example.com',
+        password: '123',
+        gender: 'Female',
+        address: '123 Doctor Street',
+        area: 'Downtown',
+        governorate: 'Cairo',
+        contact: '123456789',
+        role: 'Doctor'
+    };
+} else if (username === 'Wael_Ahmed' && password === '456') {
+    // Teacher
+    formData = {
+        firstName: 'Wael',
+        lastName: 'Ahmed',
+        email: 'wael@example.com',
+        password: '456',
+        gender: 'Male',
+        address: '456 Teacher Street',
+        area: 'Giza',
+        governorate: 'Giza',
+        contact: '987654321',
+        role: 'Teacher'
+    };
+} else if (username === 'Mariam_Sameh' && password === '789') {
+    // Regular Donor
+    formData = {
+        firstName: 'Mariam',
+        lastName: 'Sameh',
+        email: 'mariam@example.com',
+        password: '789',
+        gender: 'Female',
+        address: '789 Donor Street',
+        area: 'Maadi',
+        governorate: 'Cairo',
+        contact: '135792468',
+        role: 'Regular Donor'
+    };
+  } 
+    function redirectToUpdate() {
+      window.location.href = 'update_profile.html';
+    }
+
+    function redirectToDelete() {
+      window.location.href = 'delete_data.html';
+    }
+   
+    document.getElementById('backToRequestsBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        history.back(); // Go back to the previous page
+    });
+
+
+  </script>
+</body>
+</html>

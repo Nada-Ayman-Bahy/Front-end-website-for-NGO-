@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Update Profile</div>
+    <div class="content">
+      <form id="updateForm" action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="firstname" placeholder="Enter your firstname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="lastname" placeholder="Enter your lastname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="gender-details">
+            <span class="details">Gender</span>
+            <select id="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id="address" placeholder="Enter your address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Area</span>
+            <input type="text" id="area" placeholder="Enter your Area" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Governorate</span>
+            <input type="text" id="governorate" placeholder="Enter your Governorate" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contact Number</span>
+            <input type="text" id="contact" placeholder="Enter your Contact Number" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Update">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Retrieve existing data from local storage
+    const userData = JSON.parse(localStorage.getItem('registrationData'));
+
+    // Prefill the form with existing data
+    document.getElementById('firstname').value = userData.firstName;
+    document.getElementById('lastname').value = userData.lastName;
+    document.getElementById('email').value = userData.email;
+    document.getElementById('password').value = userData.password;
+    document.getElementById('gender').value = userData.gender;
+    document.getElementById('address').value = userData.address;
+    document.getElementById('area').value = userData.area;
+    document.getElementById('governorate').value = userData.governorate;
+    document.getElementById('contact').value = userData.contact;
+
+    // Handle form submission
+    const updateForm = document.getElementById('updateForm');
+    updateForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get updated form data
+      const updatedData = {
+        firstName: document.getElementById('firstname').value,
+        lastName: document.getElementById('lastname').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        gender: document.getElementById('gender').value,
+        address: document.getElementById('address').value,
+        area: document.getElementById('area').value,
+        governorate: document.getElementById('governorate').value,
+        contact: document.getElementById('contact').value,
+      };
+
+      // Update data in local storage
+      localStorage.setItem('registrationData', JSON.stringify(updatedData));
+
+      // Redirect to donor profile page
+      window.location.href = 'donor_profile.html';
+    });
+  </script>
+</body>
+</html>

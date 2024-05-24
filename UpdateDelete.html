@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update/Delete Donation Posts for Organizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .post {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <h3>Food Donation</h3>
+        <p><strong>Item Name:</strong> Apples</p>
+        <p><strong>Type:</strong> Fruits and Vegetables</p>
+        <p><strong>Quantity:</strong> 100</p>
+        <!-- Add photo upload functionality here -->
+        <div>
+            <button class="button update-button">Update Post</button>
+            <button class="button delete-button" onclick="deletePost(this)">Delete Post</button>
+        </div>
+    </div>
+
+    <div class="post">
+        <h3>Toy Donation</h3>
+        <p><strong>Type:</strong> Action Figures</p>
+        <p><strong>Gender:</strong> Boys</p>
+        <p><strong>Age:</strong> 3-6</p>
+        <p><strong>Category:</strong> Educational</p>
+        <p><strong>Quantity:</strong> 50</p>
+        <!-- Add photo upload functionality here -->
+        <div>
+            <button class="button update-button">Update Post</button>
+            <button class="button delete-button" onclick="deletePost(this)">Delete Post</button>
+        </div>
+    </div>
+
+    <!-- Add more donation posts as needed -->
+
+    <script>
+        // Function to handle post deletion
+        function deletePost(button) {
+            var post = button.parentNode.parentNode;
+            post.parentNode.removeChild(post);
+        }
+
+        // Add event listeners to all update buttons
+        var updateButtons = document.querySelectorAll('.update-button');
+        updateButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Replace post content with update form
+                var post = this.parentNode.parentNode;
+                var postContent = post.innerHTML;
+                var updateForm = `
+                    <form>
+                        <!-- Add input fields to update post details here -->
+                        <input type="text" name="itemName" placeholder="Item Name">
+                        <input type="text" name="type" placeholder="Type">
+                        <input type="number" name="quantity" placeholder="Quantity">
+                        <!-- Add photo upload functionality here -->
+                        <div>
+                            <button type="submit" class="button">Save Changes</button>
+                            <button type="button" class="button delete-button" onclick="cancelUpdate(this)">Cancel</button>
+                        </div>
+                    </form>
+                `;
+                post.innerHTML = updateForm;
+            });
+        });
+
+        // Function to cancel post update
+        function cancelUpdate(button) {
+            var post = button.parentNode.parentNode.parentNode;
+            post.innerHTML = postContent;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes Donation Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */
+            background-size: cover;
+            color: #333; 
+        }
+
+        h2 {
+            margin-top: 10px; 
+            margin-bottom: 10px; 
+            font-size: 24px; 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 15px; 
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            width: calc(100% - 22px);
+            font-size: 16px; 
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <a href="createpost.html" class="back-button" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Enter Clothes Donation Details</h2>
+    <form id="donation-form" action="/submit_clothes_donation" method="POST">
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" required>
+        
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required>
+        
+        <label for="season">Season:</label>
+        <input type="text" id="season" name="season" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        
+        <label for="material">Material:</label>
+        <input type="text" id="material" name="material" required>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('donation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            var formData = new FormData(this);
+            alert("Clothes donation post submitted successfully!");
+        });
+    </script>
+</body>
+</html>

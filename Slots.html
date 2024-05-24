@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Selection for Donation Drop-off</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */
+            background-size: cover; /* Cover the entire viewport */
+        }
+
+        .container {
+            width: 80%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        select,
+        input[type="date"],
+        input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            width: 300px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #schedule-message {
+            display: none;
+            color: green;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <a href="GoogleMaps.html" class="back-button" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    <div class="container">
+        <h1>Schedule Selection for Donation Drop-off</h1>
+        <form id="schedule-form" action="#" method="post">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+
+            <label for="time-slot">Select Time Slot:</label>
+            <select id="time-slot" name="time-slot" required>
+                <option value="09:00-10:00">9:00 AM - 10:00 AM</option>
+                <option value="10:00-11:00">10:00 AM - 11:00 AM</option>
+                <option value="11:00-12:00">11:00 AM - 12:00 PM</option>
+                <option value="12:00-13:00">12:00 PM - 1:00 PM</option>
+                <option value="13:00-14:00">1:00 PM - 2:00 PM</option>
+                <option value="14:00-15:00">2:00 PM - 3:00 PM</option>
+                <option value="15:00-16:00">3:00 PM - 4:00 PM</option>
+                <option value="16:00-17:00">4:00 PM - 5:00 PM</option>
+            </select>
+            <br><br>
+
+            <input type="submit" value="Schedule Drop-off">
+        </form>
+        <p id="schedule-message"></p>
+    </div>
+
+    <script>
+        document.getElementById('schedule-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get selected date and time slot
+            var selectedDate = document.getElementById('date').value;
+            var selectedTimeSlot = document.getElementById('time-slot').value;
+
+            // Display confirmation message
+            var message = "Drop-off scheduled successfully for " + selectedDate + " at " + selectedTimeSlot + ".";
+            document.getElementById('schedule-message').innerText = message;
+            document.getElementById('schedule-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

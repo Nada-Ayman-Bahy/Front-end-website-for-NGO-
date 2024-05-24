@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Probono</title>
+    <link rel="stylesheet" type="text/css" href="css/Bookdeets.css">
+</head>
+<body>
+    <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+    <h1>Medical Probono</h1>
+    <nav>
+        <a href="AllRequests.html">Home</a>
+        <a href="index.html">Logout</a>
+    </br>
+</br>
+
+    </nav>
+
+    <script>
+        function redirectToClinicLocation() {
+            window.location.href = 'Hosptial.html';
+        }
+
+        function redirectToMedicalCases() {
+            window.location.href = 'MedicalCasesList.html';
+        }
+        document.getElementById('backToRequestsBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        history.back(); // Go back to the previous page
+    });
+
+    </script>
+</body>
+</html>

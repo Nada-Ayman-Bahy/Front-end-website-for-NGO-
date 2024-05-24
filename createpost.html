@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <a href="org_dash.html" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    <title>Create Donation Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */      
+            background-size: cover;
+            background-position: center;
+        }
+        .main-w3layouts {
+            margin: 50px auto;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.8); /* Adding transparency to the background */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-agileinfo {
+            text-align: center;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-w3layouts wrapper">
+        <h1>Create Donation Post</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="#" method="post" onsubmit="redirectToDetailsPage(); return false;">
+                    <select name="Select Category" id="Category">
+                        <option value="Clothes">Clothes</option>
+                        <option value="Toys">Toys</option>
+                        <option value="Food">Food</option>
+                        <option value="MedicalSupplies">Medical Supplies</option>
+                        <option value="SchoolSupplies">School Supplies</option>
+                        <option value="BloodDonations">Blood Donations</option>
+                    </select>
+                    <input type="submit" value="Create Post">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToDetailsPage() {
+            var category = document.getElementById("Category").value;
+            var redirectUrl = "";
+
+            switch (category) {
+                case "Clothes":
+                    redirectUrl = "Cloth.html";
+                    break;
+                case "Toys":
+                    redirectUrl = "ToysO.html";
+                    break;
+                case "Food":
+                    redirectUrl = "FoodO.html";
+                    break;
+                case "MedicalSupplies":
+                    redirectUrl = "Medical.html";
+                    break;
+                case "SchoolSupplies":
+                    redirectUrl = "School.html";
+                    break;
+                case "MedicalDonations":
+                    redirectUrl = "Blood.html";
+                    break;
+                default:
+                    redirectUrl = "default_details.html"; 
+            }
+
+            redirectUrl += "?action=create";
+
+            window.location.href = redirectUrl;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            /*background-color: #f0f0f0;*/
+        }
+
+        .request-management-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .request-management-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .request {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .request h3 {
+            margin-bottom: 5px;
+        }
+
+        .request p {
+            margin: 5px 0;
+        }
+
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+
+        .accept-message {
+            background-color: #28a745;
+        }
+
+        .reject-message {
+            background-color: #dc3545;
+        }
+
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-buttons" style="text-align: center; margin-top: 20px;">
+        <button onclick="navigateBack()">&#9664;</button> <!-- Left arrow -->
+        <button onclick="navigateNext()">&#9654;</button> <!-- Right arrow -->
+    </div>
+    <div class="request-management-container">
+        <h2>Manage Organization and Donor Requests</h2>
+        <div class="request" id="organization-request">
+            <h3>Organization Request 1</h3>
+            <p><strong>Name:</strong> Harmony Health Organization</p>
+            <p><strong>Address:</strong> 123 Main Street, Cityville</p>
+            <p><strong>Type:</strong> Hospital</p>
+            <button class="accept-button" onclick="acceptOrganization()">Accept</button>
+            <button class="reject-button" onclick="rejectOrganization()">Reject</button>
+            <div class="message accept-message" id="organization-accept-message"> request accepted.</div>
+            <div class="message reject-message" id="organization-reject-message"> request rejected.</div>
+        </div>
+        <div class="request" id="organization-request-2">
+            <h3>Organization Request 2</h3>
+            <p><strong>Name:</strong> Future Education</p>
+            <p><strong>Address:</strong> 789 Oak Avenue, Townsville</p>
+            <p><strong>Type:</strong> Public School</p>
+            <button class="accept-button" onclick="acceptOrganization2()">Accept</button>
+            <button class="reject-button" onclick="rejectOrganization2()">Reject</button>
+            <div class="message accept-message" id="organization-accept-message-2"> request accepted.</div>
+            <div class="message reject-message" id="organization-reject-message-2"> request rejected.</div>
+        </div>
+        
+        <div class="request" id="donor-request-2">
+            <h3>Donor Request 1</h3>
+            <p><strong>Name:</strong> Teacher Nada Ayman</p>
+            <p><strong>Address:</strong> 45 Abas el akad, Cairo</p>
+            <p><strong>Telephone Number:</strong> 987-654-3210</p>
+            <button class="accept-button" onclick="acceptDonor2()">Accept</button>
+            <button class="reject-button" onclick="rejectDonor2()">Reject</button>
+            <div class="message accept-message" id="donor-accept-message-2"> request accepted.</div>
+            <div class="message reject-message" id="donor-reject-message-2"> request rejected.</div>
+        </div>
+        
+        <div class="request" id="donor-request">
+            <h3>Donor Request 2</h3>
+            <p><strong>Name:</strong> Ahmed Mohamed</p>
+            <p><strong>Address:</strong> 123 Mostafa el Nahas, Cairo</p>
+            <p><strong>Telephone Number:</strong> 123-456-7890</p>
+            <button class="accept-button" onclick="acceptDonor()">Accept</button>
+            <button class="reject-button" onclick="rejectDonor()">Reject</button>
+            <div class="message accept-message" id="donor-accept-message"> request accepted.</div>
+            <div class="message reject-message" id="donor-reject-message"> request rejected.</div>
+        </div>
+        <!-- Add more requests as needed -->
+    </div>
+
+    <script>
+        function acceptOrganization() {
+            var organizationRequest = document.getElementById('organization-request');
+            var acceptMessage = document.getElementById('organization-accept-message');
+            organizationRequest.removeChild(organizationRequest.querySelector('.accept-button'));
+            organizationRequest.removeChild(organizationRequest.querySelector('.reject-button'));
+            acceptMessage.style.display = 'block';
+        }
+
+        function rejectOrganization() {
+            var organizationRequest = document.getElementById('organization-request');
+            var rejectMessage = document.getElementById('organization-reject-message');
+            organizationRequest.removeChild(organizationRequest.querySelector('.accept-button'));
+            organizationRequest.removeChild(organizationRequest.querySelector('.reject-button'));
+            rejectMessage.style.display = 'block';
+        }
+
+        function acceptOrganization2() {
+            var organizationRequest = document.getElementById('organization-request-2');
+            var acceptMessage = document.getElementById('organization-accept-message-2');
+            organizationRequest.removeChild(organizationRequest.querySelector('.accept-button'));
+            organizationRequest.removeChild(organizationRequest.querySelector('.reject-button'));
+            acceptMessage.style.display = 'block';
+        }
+
+        function rejectOrganization2() {
+            var organizationRequest = document.getElementById('organization-request-2');
+            var rejectMessage = document.getElementById('organization-reject-message-2');
+            organizationRequest.removeChild(organizationRequest.querySelector('.accept-button'));
+            organizationRequest.removeChild(organizationRequest.querySelector('.reject-button'));
+            rejectMessage.style.display = 'block';
+        }
+
+        function acceptDonor() {
+            var donorRequest = document.getElementById('donor-request');
+            var acceptMessage = document.getElementById('donor-accept-message');
+            donorRequest.removeChild(donorRequest.querySelector('.accept-button'));
+            donorRequest.removeChild(donorRequest.querySelector('.reject-button'));
+            acceptMessage.style.display = 'block';
+        }
+
+        function rejectDonor() {
+            var donorRequest = document.getElementById('donor-request');
+            var rejectMessage = document.getElementById('donor-reject-message');
+            donorRequest.removeChild(donorRequest.querySelector('.accept-button'));
+            donorRequest.removeChild(donorRequest.querySelector('.reject-button'));
+            rejectMessage.style.display = 'block';
+        }
+
+        function acceptDonor2() {
+            var donorRequest = document.getElementById('donor-request-2');
+            var acceptMessage = document.getElementById('donor-accept-message-2');
+            donorRequest.removeChild(donorRequest.querySelector('.accept-button'));
+            donorRequest.removeChild(donorRequest.querySelector('.reject-button'));
+            acceptMessage.style.display = 'block';
+        }
+
+        function rejectDonor2() {
+            var donorRequest = document.getElementById('donor-request-2');
+            var rejectMessage = document.getElementById('donor-reject-message-2');
+            donorRequest.removeChild(donorRequest.querySelector('.accept-button'));
+            donorRequest.removeChild(donorRequest.querySelector('.reject-button'));
+            rejectMessage.style.display = 'block';
+        }
+
+        function navigateBack() {
+            // Navigate back in the history
+            window.history.back();
+            console.log("Navigating back.");
+        }
+
+        function navigateNext() {
+            // Navigate forward in the history
+            window.history.forward();
+            console.log("Navigating forward.");
+        }
+    </script>
+</body>
+</html>

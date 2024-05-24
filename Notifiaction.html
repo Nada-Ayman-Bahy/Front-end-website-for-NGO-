@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive Notification for Chosen Donation Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */
+            background-size: cover; /* Cover the entire viewport */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Gap between posts */
+        }
+
+        .post {
+            flex: 1; /* Equal height for all posts */
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff; /* Ensure container background is white */
+            border-radius: 10px; /* Add border-radius */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add box shadow */
+        }
+        .acknowledgment-input {
+            width: calc(100% - 42px); /* Adjusted width to accommodate the button */
+            padding: 5px;
+            margin-top: 10px;
+            margin-right: 10px; /* Added margin to separate the button */
+        }
+        .details-button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .details-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Notifications</h2> <!-- Title -->
+    <div class="container">
+        <div class="post">
+            <h3>Food Donation Fulfillment</h3>
+            <textarea class="acknowledgment-input" placeholder="Send acknowledgment to the donor"></textarea>
+            <button class="details-button">Send Acknowledgment</button>
+        </div>
+
+        <div class="post">
+            <h3>Blood Donation Fulfillment</h3>
+            <textarea class="acknowledgment-input" placeholder="Send acknowledgment to the donor"></textarea>
+            <button class="details-button">Send Acknowledgment</button>
+        </div>
+    </div>
+
+    <!-- Add more posts as needed -->
+
+    <script>
+        // Get all acknowledgment input elements
+        const acknowledgmentInputs = document.querySelectorAll('.acknowledgment-input');
+
+        // Add event listener to each acknowledgment input
+        acknowledgmentInputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                const acknowledgmentMessage = this.value;
+                if (acknowledgmentMessage.trim() !== '') {
+                    // Simulate sending acknowledgment message to the donor
+                    alert("Acknowledgment Sent to Donor Successfully!");
+                    // Clear the input after sending acknowledgment
+                    this.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

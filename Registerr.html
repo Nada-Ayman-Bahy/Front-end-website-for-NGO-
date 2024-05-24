@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Registration Form | CodingLab</title>
+  <link rel="stylesheet" href="stylee.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="registrationForm" action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="firstname" placeholder="Enter your firstname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="lastname" placeholder="Enter your lastname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="gender-details">
+            <span class="details">Gender</span>
+            <select id="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id="address" placeholder="Enter your address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Area</span>
+            <input type="text" id="area" placeholder="Enter your Area" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Governorate</span>
+            <input type="text" id="governorate" placeholder="Enter your Governorate" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contact Number</span>
+            <input type="text" id="contact" placeholder="Enter your Contact Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Role</span>
+            <select id="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="regular_donor">Regular Donor</option>
+              <option value="teacher">Teacher</option>
+              <option value="doctor">Doctor</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+          <div id="documentUploadSection" style="display: none;">
+            <label for="documentUpload">Upload document(s) for verification:</label>
+            <input type="file" id="documentUpload" name="documentUpload" accept=".pdf, .doc, .docx">
+            <div id="documentUploadMessage" style="display: none;"></div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+    <div id="successMessage" style="display: none; text-align: center; margin-top: 20px;">
+      <p>You have registered successfully. You will be redirected to the Login page.</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const firstNameInput = document.getElementById('firstname');
+    const lastNameInput = document.getElementById('lastname');
+    const genderInput = document.getElementById('gender');
+    const emailInput = document.getElementById('email');
+    const areaInput = document.getElementById('area');
+    const passwordInput= document.getElementById('password');// Include password field
+    const addressInput= document.getElementById('address');
+    const governorateInput = document.getElementById('governorate');
+    const contactInput = document.getElementById('contact');
+    const roleInput = document.getElementById('role');
+    const documentUploadSection = document.getElementById('documentUploadSection');
+  
+    form.addEventListener('submit', function(event) {
+      if (!isValidName(firstNameInput.value)) {
+        alert('Please enter a valid first name (only letters allowed).');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidName(lastNameInput.value)) {
+        alert('Please enter a valid last name (only letters allowed).');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidEmail(emailInput.value)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidName(governorateInput.value)) {
+        alert('Please enter a valid governorate (only letters allowed).');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidContactNumber(contactInput.value)) {
+        alert('Please enter a valid contact number (only numbers allowed).');
+        event.preventDefault();
+        return;
+      }
+  
+      // If all validations pass, prevent the default form submission
+      event.preventDefault();
+  
+      // Get form data
+      const formData = {
+        firstName: firstNameInput.value,
+        lastName: lastNameInput.value,
+        email: emailInput.value,
+        password: passwordInput.value,
+        gender: genderInput.value,
+        address: addressInput.value,
+        area: areaInput.value,
+        governorate: governorateInput.value,
+        contact: contactInput.value,
+        role: roleInput.value
+      };
+
+      // Save data to local storage
+      localStorage.setItem('registrationData', JSON.stringify(formData));
+
+      // Show success message
+      document.getElementById('successMessage').style.display = 'block';
+
+      // Set timeout for redirection
+      setTimeout(function() {
+        window.location.href = 'index.html'; // Replace 'login.html' with your actual login page URL
+      }, 3000); // 10000 milliseconds = 10 seconds
+    });
+  
+    // Show or hide the document upload section based on the selected role
+    roleInput.addEventListener('change', function() {
+      if (roleInput.value === 'teacher' || roleInput.value === 'doctor') {
+        documentUploadSection.style.display = 'block';
+      } else {
+        documentUploadSection.style.display = 'none';
+      }
+    });
+
+    function isValidName(name) {
+      return /^[a-zA-Z]+$/.test(name);
+    }
+    function isValidEmail(email) {
+      return /\S+@\S+\.\S+/.test(email);
+    }
+  
+    function isValidContactNumber(number) {
+      return /^\d+$/.test(number);
+    }
+  </script>
+</body>
+</html>

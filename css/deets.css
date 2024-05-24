@@ -1,0 +1,230 @@
+    /* styles.css */
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: #f8f8f8;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-image: url('Pictures/clothes.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .container-login100 {
+        width: 100%;
+        min-height: 100vh;
+        padding: 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        background-color: rgba(240, 240, 240, 0.8);
+    }
+
+    .blur-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        filter: blur(10px);
+        opacity: 0.5;
+    }
+
+
+
+    h1,
+    a {
+        margin: 0; /* Remove default margin */
+        padding: 5px 10px; /* Adjust padding */
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr auto; /* Data on the left, picture on the right */
+        gap: 10px; /* Gap between grid items */
+        align-items: center; /* Center items vertically */
+    }
+
+    .clothing-item h3 {
+        margin-bottom: 5px;
+    }
+
+    main {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login100-form-logo {
+        font-size: 60px; 
+        color: #333333;
+        display: flex;
+        justify-content: flex-start; /* Align the logo to the left */
+        align-items: LEFT; /* Center vertically */
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #fff;
+        margin-right: 10px; /* Add some margin between the logo and the data */
+    }
+
+    header {
+        background-color: #E4B7A0 ;
+        color: #fff;
+        padding: 5px 0; /* Reduced padding */
+        text-align: center;
+        position: relative;
+        z-index: 2; /* Ensure the header is above the background */
+        display: flex; /* Use flexbox for layout */
+        justify-content: center; /* Center the data horizontally */
+        align-items: center; /* Center the data vertically */
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+    }
+    
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .container-login100 {
+        width: 100%;  
+        min-height: 100vh;
+    
+        padding: 15px;
+    
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        z-index: 1;  
+    }
+    .blur-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    
+        background-size: cover;
+        background-position: center;
+        z-index: -1; /* Ensure the overlay is behind content */
+        filter: blur(10px); /* Increase the blur intensity to 10px or adjust as needed */
+        opacity: 0.5; /* 50% opacity for a semi-transparent effect */
+    }
+
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: #ffffff;
+        justify-content: right; /* Center the data horizontally */
+        align-items: 20px; /* Center the data vertically */
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    button {
+        padding: 12px 24px;
+        background-color: #A45C40;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #E4B7A0;
+        transform: scale(1.1);
+    }
+    #backToRequestsBtn {
+        background-color: #E4B7A0; /* Background color */
+        color: #fff; /* Text color */
+        padding: 10px 20px; /* Padding for the button */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Cursor style on hover */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    }
+    
+    #backToRequestsBtn:hover {
+        background-color: #A45C40; /* Darker background color on hover */
+        transform: scale(1.1); /* Scale the button on hover */
+    }
+
+
+    .grid-item {
+        border: 2px solid #DE978F; /* Green border */
+        padding: 8px; 
+    }
+
+
+
+    .clothing-item {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* Remove z-index and position:relative from #clothingList */
+    #clothingList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+        padding: 20px; /* Add padding to the grid container */
+    }
+
+
+
+    /* Styles for specific elements */
+    .clothing-item h3 {
+        color: #432f04;
+        margin-bottom: 5px;
+    }
+
+    .clothing-item p {
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .content-container {
+            padding: 10px;
+        }
+
+        .grid-container {
+            grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        }
+    }
+    .details-image img {
+        width: 250px; /* Increase the width of the image */
+        height: 250px; /* Increase the height of the image */
+    }
+
+    .details-container {
+        display: grid;
+        grid-template-columns: 1fr; /* 1 column layout */
+        gap: 5px; /* Reduce the gap between grid items */
+    }
+
+    /* Adjust line spacing for text elements */
+    .details-container p {
+        margin: 5px 0; /* Less margin for top and bottom */
+    }

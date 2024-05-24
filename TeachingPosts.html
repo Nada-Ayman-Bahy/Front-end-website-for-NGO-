@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/TeachingPosts.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/lecture.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <header>
+            <span class="login100-form-logo">
+                <img src="vendor/logo.jpg" alt="Logo">
+            </span>
+            <h1>Teaching Posts</h1>
+            <!-- Home page icon -->
+        
+            <header1>
+                <nav>
+                    <a href="AllRequests.html">Home</a>
+                    <a href="index.html">Logout</a>
+                </br>
+            </br>
+
+                </nav>
+            </header1>
+        </header>
+    <main>
+        <div id="filterSection">
+            <label for="subjectFilter">Select Subject:</label>
+            <select id="subjectFilter">
+            </select>
+            
+            <label for="governorateFilter">Select Governorate:</label>
+            <select id="governorateFilter">
+            </select>
+
+            <label for="areaFilter">Select Area:</label>
+            <select id="areaFilter">
+            </select>
+
+            <button id="filterBtn">Filter</button>
+        </div>
+        
+        <!-- Search Bar -->
+        <div id="searchBar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchBtn">Search</button>
+        </div>
+           <div id="searchBar">
+            <button id="Pro">Pro-Bonos</button>
+
+        </div>
+        
+          
+        <div class="grid-container" id="teachingGrid">
+            <!-- Teaching posts and details links will be dynamically populated here -->
+        </div>
+        <div id="teachingList">
+            <!-- Teaching posts will be dynamically populated here -->
+        </div>
+        <div id="errorMessage" style="display: none; color: red;"></div>
+    </main>
+</div>
+    <script src="js/TeachingPosts.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

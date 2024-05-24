@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/MedicalReqDetails.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/MED.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <div class="wrap-login100">
+            <form class="login100-form validate-form">
+                <header>
+                    <span class="login100-form-logo">
+                        <img src="vendor/logo.jpg" alt="Logo">
+                    </span>
+                    <h1>Medical Device Details</h1>
+                    <!-- Navigation or back button to return to the main page -->
+                    
+                    <header1>
+                        <nav>
+                            <a href="AllRequests.html">Home</a>
+                            <a href="index.html">Logout</a>
+                        </br>
+                    </br>
+        
+                        </nav>
+                    </header1>
+                </header>
+            </form>
+        </div>
+    <main>
+        <div class="details-container">
+            <div class="details-content">
+                <h2 id="deviceName"></h2>
+                <p>Type: <span id="deviceType"></span></p>
+                <p>Use: <span id="deviceUse"></span></p>
+                <p>Quantity: <span id="deviceQuantity"></span></p>
+                
+                <label for="quantityInput">Enter Quantity to Donate:</label>
+                <input type="number" id="quantityInput" min="1" placeholder="1"><br>
+                <button id="donation">Donate</button>
+               
+            </div>
+            <div class="details-image">
+                <img src="" id="deviceImage" alt="Device Image">
+            </div>
+        </div>
+    </main>
+    <script src="js/MedicalDetails.js"></script> <!-- Link to your JavaScript file for details -->
+</body>
+</html>

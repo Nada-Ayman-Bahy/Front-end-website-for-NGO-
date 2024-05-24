@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <a href="Notification.html" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Location in Egypt</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body {
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */       
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        /* Style for the button */
+        button {
+            padding: 15px 30px; /* Increase padding for larger button */
+            background-color: #28a745; /* Green color */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green color on hover */
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>My Location in Egypt</h2>
+    <div id="map"></div>
+
+    <script>
+        // Initialize Leaflet map centered around Egypt
+        const map = L.map('map').setView([26.8206, 30.8025], 6);
+
+        // Add OpenStreetMap tiles to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add a marker representing your location
+        let marker;
+        map.on('click', function(event) {
+            if(marker) {
+                marker.setLatLng(event.latlng);
+            } else {
+                marker = L.marker(event.latlng).addTo(map);
+            }
+        });
+
+        // Function to redirect to Slots.html
+        function redirectToSlots() {
+            window.location.href = "Slots.html";
+        }
+    </script>
+
+    <!-- Button to redirect to Slots.html -->
+    <button onclick="redirectToSlots()">Continue to Slots</button>
+</body>
+</html>

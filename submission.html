@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Review</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <!-- CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            /*background-color: #f0f0f0;*/
+        }
+
+        .submission-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        .submission-container h3 {
+            margin-bottom: 10px;
+        }
+
+        .submission-details {
+            margin-bottom: 20px;
+        }
+
+        .submission-details p {
+            margin-bottom: 5px;
+        }
+
+        .document-list {
+            margin-bottom: 10px;
+        }
+
+        .document-list li {
+            margin-bottom: 5px;
+        }
+
+        .submission-buttons button {
+            padding: 10px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submission-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submission Review Section</h1>
+    <div class="navigation-buttons" style="text-align: center; margin-top: 20px;">
+        <button onclick="navigateBack()">&#9664;</button> <!-- Left arrow -->
+        <button onclick="navigateNext()">&#9654;</button> <!-- Right arrow -->
+    </div>
+    <div class="submission-container">
+        <h2>Organization Submissions</h2>
+        <div id="organization-submissions">
+            <!-- Placeholder for organization submissions -->
+        </div>
+    </div>
+
+    <div class="submission-container">
+        <h2>Donor Doctor Submissions</h2>
+        <div id="donor-doctor-submissions">
+            <!-- Placeholder for donor doctor submissions -->
+        </div>
+    </div>
+
+    <div class="submission-container">
+        <h2>Donor Teacher Submissions</h2>
+        <div id="donor-teacher-submissions">
+            <!-- Placeholder for donor teacher submissions -->
+        </div>
+    </div>
+
+    <!-- JavaScript for dynamic content and functionality -->
+    <script>
+        // Define organization submission data
+        var organizationSubmissions = [
+            {
+                name: "Harmony Health Organization",
+                type: "Hospital",
+                documents: [
+                    { name: "Medical reports", information: "Reports from the past year." },
+                    { name: "Medical history", information: "Complete medical history of the organization." }
+                ],
+                accepted: false
+            },
+            {
+                name: "Future Education Organization",
+                type: "School",
+                documents: [
+                    { name: "Curriculum", information: "Detailed curriculum for different grades." },
+                    { name: "Teaching materials", information: "List of materials needed for teaching." }
+                ],
+                accepted: false
+            }
+        ];
+
+        // Define donor doctor submission data
+        var donorDoctorSubmissions = [
+            {
+                name: "Dr. Jane Smith",
+                specialization: "Pediatrics",
+                documents: [
+                    { name: "Medical License", information: "License number: 1234-5678-9998" },
+                    { name: "Resume", information: "10 years of experience in pediatrics." }
+                ],
+                accepted: false
+            },
+            {
+                name: "Dr. Michael Brown",
+                specialization: "Cardiology",
+                documents: [
+                    { name: "Medical License", information: "License number: 9888-5431-2678" },
+                    { name: "Resume", information: "Specialist in heart-related diseases." }
+                ],
+                accepted: false
+            }
+        ];
+
+        // Define donor teacher submission data
+        var donorTeacherSubmissions = [
+            {
+                name: "John Doe",
+                specialization: "English Literature",
+                documents: [
+                    { name: "Teaching Certificate", information: "Certificate number: 9876-5432-1234" },
+                    { name: "Resume", information: "5 years of teaching experience." }
+                ],
+                accepted: false
+            },
+            {
+                name: "Jane Doe",
+                specialization: "Mathematics",
+                documents: [
+                    { name: "Teaching Certificate", information: "Certificate number: 5678-1234-9876" },
+                    { name: "Resume", information: "Specialist in calculus." }
+                ],
+                accepted: false
+            }
+        ];
+
+        // Function to display organization submissions
+        function displayOrganizationSubmissions() {
+            var organizationContainer = document.getElementById("organization-submissions");
+            organizationSubmissions.forEach(function(submission, index) {
+                var submissionElement = document.createElement("div");
+                submissionElement.classList.add("submission-container");
+                submissionElement.innerHTML = `
+                    <h3>${submission.name}</h3>
+                    <div class="submission-details">
+                        <p><strong>Type:</strong> ${submission.type}</p>
+                        <p><strong>Documents:</strong></p>
+                        <ul class="document-list">
+                            ${submission.documents.map(doc => `<li>${doc.name}: ${doc.information}</li>`).join("")}
+                        </ul>
+                    </div>
+                    <div class="submission-buttons">
+                        <button onclick="downloadDocuments('organization', ${index})">Download</button>
+                        <button onclick="acceptSubmission('organization', ${index})">Accept</button>
+                        <button onclick="rejectSubmission('organization', ${index})">Reject</button>
+                    </div>
+                    <p id="org-message-${index}"></p>
+                `;
+                organizationContainer.appendChild(submissionElement);
+            });
+        }
+
+        // Function to display donor doctor submissions
+        function displayDonorDoctorSubmissions() {
+            var donorDoctorContainer = document.getElementById("donor-doctor-submissions");
+            donorDoctorSubmissions.forEach(function(submission, index) {
+                var submissionElement = document.createElement("div");
+                submissionElement.classList.add("submission-container");
+                submissionElement.innerHTML = `
+                    <h3>${submission.name}</h3>
+                    <div class="submission-details">
+                        <p><strong>Specialization:</strong> ${submission.specialization}</p>
+                        <p><strong>Documents:</strong></p>
+                        <ul class="document-list">
+                            ${submission.documents.map(doc => `<li>${doc.name}: ${doc.information}</li>`).join("")}
+                        </ul>
+                    </div>
+                    <div class="submission-buttons">
+                        <button onclick="downloadDocuments('donor-doctor', ${index})">Download</button>
+                        <button onclick="acceptSubmission('donor-doctor', ${index})">Accept</button>
+                        <button onclick="rejectSubmission('donor-doctor', ${index})">Reject</button>
+                    </div>
+                    <p id="doctor-message-${index}"></p>
+                `;
+                donorDoctorContainer.appendChild(submissionElement);
+            });
+        }
+
+        // Function to display donor teacher submissions
+        function displayDonorTeacherSubmissions() {
+            var donorTeacherContainer = document.getElementById("donor-teacher-submissions");
+            donorTeacherSubmissions.forEach(function(submission, index) {
+                var submissionElement = document.createElement("div");
+                submissionElement.classList.add("submission-container");
+                submissionElement.innerHTML = `
+                    <h3>${submission.name}</h3>
+                    <div class="submission-details">
+                        <p><strong>Specialization:</strong> ${submission.specialization}</p>
+                        <p><strong>Documents:</strong></p>
+                        <ul class="document-list">
+                            ${submission.documents.map(doc => `<li>${doc.name}: ${doc.information}</li>`).join("")}
+                        </ul>
+                    </div>
+                    <div class="submission-buttons">
+                        <button onclick="downloadDocuments('donor-teacher', ${index})">Download</button>
+                        <button onclick="acceptSubmission('donor-teacher', ${index})">Accept</button>
+                        <button onclick="rejectSubmission('donor-teacher', ${index})">Reject</button>
+                    </div>
+                    <p id="teacher-message-${index}"></p>
+                `;
+                donorTeacherContainer.appendChild(submissionElement);
+            });
+        }
+
+        // Function to download documents as PDF
+        function downloadDocuments(type, index) {
+            var submissions;
+            if (type === 'organization') {
+                submissions = organizationSubmissions;
+            } else if (type === 'donor-doctor') {
+                submissions = donorDoctorSubmissions;
+            } else if (type === 'donor-teacher') {
+                submissions = donorTeacherSubmissions;
+            }
+            var submission = submissions[index];
+
+            // Create a new jsPDF instance
+            const { jsPDF } = window.jspdf;
+            var doc = new jsPDF();
+
+            // Title for the PDF
+            doc.setFontSize(16);
+            doc.text(`${submission.name} Documents`, 20, 20);
+
+            if (submission.type !== undefined) {
+                doc.setFontSize(12);
+                var submissionType = 'Type: ' + submission.type;
+                doc.text(submissionType, 20, 30);
+            }
+
+            // Add documents to the PDF
+            var yPos = 40;
+            submission.documents.forEach(function(docItem, idx) {
+                doc.setFontSize(12);
+                doc.text(`${idx + 1}. ${docItem.name}: ${docItem.information}`, 20, yPos);
+                yPos += 10;
+            });
+
+            // Save the PDF
+            doc.save(`${submission.name}_documents.pdf`);
+        }
+
+        // Function to accept submission
+        function acceptSubmission(type, index) {
+            var submissions;
+            if (type === 'organization') {
+                submissions = organizationSubmissions;
+            } else if (type === 'donor-doctor') {
+                submissions = donorDoctorSubmissions;
+            } else if (type === 'donor-teacher') {
+                submissions = donorTeacherSubmissions;
+            }
+            submissions[index].accepted = true;
+            var messageElement = document.getElementById(`${type}-message-${index}`);
+            // messageElement.innerText = "Submission accepted.";
+            // messageElement.classList.add("success-message");
+            alert("Submission accepted")
+        }
+
+        // Function to reject submission
+        function rejectSubmission(type, index) {
+            var submissions;
+            if (type === 'organization') {
+                submissions = organizationSubmissions;
+            } else if (type === 'donor-doctor') {
+                submissions = donorDoctorSubmissions;
+            } else if (type === 'donor-teacher') {
+                submissions = donorTeacherSubmissions;
+            }
+            submissions[index].accepted = false;
+            var messageElement = document.getElementById(`${type}-message-${index}`);
+            // messageElement.innerText = "Submission rejected.";
+            // messageElement.classList.add("error-message");
+            alert("Submission rejected")
+        }
+
+        // Call functions to display submissions
+        displayOrganizationSubmissions();
+        displayDonorDoctorSubmissions();
+        displayDonorTeacherSubmissions();
+
+        function navigateBack() {
+            // Navigate back in the history
+            window.history.back();
+            console.log("Navigating back.");
+        }
+
+        function navigateNext() {
+            // Navigate forward in the history
+            window.history.forward();
+            console.log("Navigating forward.");
+        }
+    </script>
+</body>
+</html>

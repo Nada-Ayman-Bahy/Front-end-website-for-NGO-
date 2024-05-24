@@ -1,0 +1,286 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure the overlay is behind content */
+    filter: blur(10px); /* Increase the blur intensity to 10px or adjust as needed */
+    opacity: 0.5; /* 50% opacity for a semi-transparent effect */
+}
+
+.icon-link {
+    margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color: #C38370;
+}
+
+input[type="text"] {
+    width: 45px;
+    height: 45px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+    border: 2px solid #C38370;
+    border-radius: 25px;
+    background: transparent;
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+}
+select {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #C38370;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+select:hover,
+select:focus {
+    border-color: #A45C40 ;
+}
+input[type="text"],
+input[type="number"] {
+    width: auto; /* Set width to auto */
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/* styles.css */
+.login100-form-logo {
+    font-size: 60px; 
+    color: #333333;
+    display: flex;
+    justify-content: flex-start; /* Align the logo to the left */
+    align-items: stretch; /* Center vertically */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px; /* Add some margin between the logo and the data */
+}
+
+#backToRequestsBtn {
+    background-color:#A45C40;/* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #E4B7A0; /* Darker blue on hover */
+    
+}
+.text {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #A45C40;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+.text:hover,
+.text:focus {
+    border-color: A45C40;
+}
+
+header {
+    background-color: #E4B7A0 ;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+
+    padding: 15px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+}
+
+h1,
+a {
+    margin: 0; /* Remove default margin */
+    padding: 5px 10px; /* Adjust padding */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: center;
+    z-index: 1;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+button {
+    padding: 12px 24px;
+    background-color: #A45C40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #E4B7A0;
+    transform: scale(1.1);
+}
+
+.login100-form-logo {
+    font-size: 60px; 
+    color: #333333;
+    display: flex;
+    justify-content: flex-start; /* Align the logo to the left */
+    align-items: left; /* Center vertically */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px; /* Add some margin between the logo and the data */
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* One column layout */
+    gap: 5px; /* Reduce the gap between grid items */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.clothing-item h3 {
+    color: #e75349;
+    margin-bottom: 5px;
+}
+
+.clothing-item p {
+    margin: 0;
+}
+
+.details-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #0300b3;
+    cursor: pointer;
+}
+
+main {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-image {
+    width: 100%; /* Take the entire width of the second column */
+    margin-left: auto; /* Push the image to the right */
+}
+
+.details-image img {
+    max-width: 100%; /* Make sure the image doesn't exceed its container's width */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* One column layout */
+    }
+
+    .details-image img {
+        width: 250px; /* Increase the width of the image */
+        height: 250px; /* Increase the height of the image */
+    }
+
+    main {
+        padding: 5px; /* Reduce padding */
+    }
+}
+#backToRequestsBtn {
+    background-color: E4B7A0;/* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #A45C40; /* Darker blue on hover */
+}

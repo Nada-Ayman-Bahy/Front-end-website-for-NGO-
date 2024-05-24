@@ -1,0 +1,323 @@
+/* Add this CSS to make text boxes smaller and arrange them under each other */
+input[type="text"],
+input[type="number"] {
+    width: auto; /* Set width to auto */
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/* styles.css */
+.login100-form-logo {
+    font-size: 60px; 
+    color: #333333;
+    display: flex;
+    justify-content: flex-start; /* Align the logo to the left */
+    align-items: LEFT; /* Center vertically */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px; /* Add some margin between the logo and the data */
+}
+
+#backToRequestsBtn {
+    background-color: #E4B7A0;/* Blue color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Cursor style on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #A45C40; /* Darker blue on hover */
+}
+.text {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #9D6C82;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+.text:hover,
+.text:focus {
+    border-color: #564779;
+}
+
+header {
+    background-color: #E4B7A0;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+
+    padding: 15px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+}
+
+h1,
+a {
+    margin: 0; /* Remove default margin */
+    padding: 5px 10px; /* Adjust padding */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: center;
+    z-index: 1;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #A45C40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #E4B7A0;
+}
+
+/* Dropdown Menu Styles */
+select {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #9D6C82;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+select:hover,
+select:focus {
+    border-color: #564779;
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* Background image and blur effect */
+    /* Background image */
+    background-image: url('../Pictures/TeachingPosts.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Pictures/TeachingPosts.jpg'); /* Blurred version of your image */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Ensure the overlay is behind content */
+    filter: blur(10px); /* Increase the blur intensity to 10px or adjust as needed */
+    opacity: 0.5; /* 50% opacity for a semi-transparent effect */
+}
+
+.icon-link {
+    margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #ffffff; /* Standard blue link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.clothing-item h3 {
+    margin-bottom: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 10px; /* Gap between grid items */
+}
+
+.grid-item {
+    border:#f0f0f0;
+    padding: 8px;
+}
+
+.details-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #007bff; /* Standard blue link color */
+    cursor: pointer;
+}
+
+main {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#clothingList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.clothing-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/* Styles for specific elements */
+.clothing-item h3 {
+    color: #e75349;
+    margin-bottom: 5px;
+}
+
+.clothing-item p {
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #clothingList {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.details-content {
+    max-width: 600px; /* Set a maximum width for the content */
+    margin-right: 20px; /* Add some margin to separate from the image */
+}
+
+.details-image {
+    margin-top: 20px; /* Adjust the top margin as needed */
+    width: 200px; /* Set a smaller width for the image container */
+}
+
+.details-image img {
+    max-width: 100%; /* Make sure the image doesn't exceed its container's width */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+/* Teaching Post Details page styles */
+
+#teachingPostDetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+#teachingPostInfo {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#mapContainer {
+    width: 50%; /* Set the width to 50% of its parent container */
+    padding-top: 50%; /* Set the height to maintain a square shape */
+    position: relative; /* Ensure proper positioning */
+}
+
+iframe {
+    position: absolute; /* Position the iframe within its container */
+    width: 100%; /* Ensure the iframe fills the container */
+    height: 100%; /* Ensure the iframe fills the container */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+}
+/* Apply the same styles to input elements for the search */
+input[type="text"] {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #9D6C82;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+/* Apply the same hover effect to input elements */
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color: #564779;
+}

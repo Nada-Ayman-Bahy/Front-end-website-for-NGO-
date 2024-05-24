@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Registered Organizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('Pictures/Background.jpg'); /* Add background image URL */            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            /*background-color: #f0f0f0;*/
+        }
+        .button-container {
+    margin-top: 20px;
+    text-align: left; /* Align the button to the left */
+}
+
+#backToRequestsBtn {
+    background-color: #DE978F; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+#backToRequestsBtn:hover {
+    background-color: #A45C40; /* Darker background color on hover */
+    transform: scale(1.1); /* Scale the button on hover */
+}
+
+
+        .registered-organizations-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .registered-organizations-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-filter-container {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .search-filter-container input[type="text"],
+        .search-filter-container select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        .organization-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+/* Styles for input elements for the search */
+input[type="text"] {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #E4B7A0;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+/* Hover effect for input elements */
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color:  #A45C40;
+}
+
+/* Styles for select elements for the drop-down menu */
+select {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.2;
+    display: inline-block;
+    width: auto;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #E4B7A0;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+
+/* Hover effect for select elements */
+select:hover,
+select:focus {
+    border-color: #E4B7A0;
+}
+
+/* Styles for buttons */
+button {
+    padding: 12px 24px;
+    background-color: #A45C40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #A45C40;
+    transform: scale(1.1);
+}
+        .organization-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .organization-item p {
+            margin: 5px 0;
+        }
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color:#A45C40;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #E4B7A0;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+      </div>
+    <div class="registered-organizations-container">
+        <h2>View Registered Organizations</h2>
+        <div class="search-filter-container">
+            <input type="text" id="search-input" placeholder="Search by organization name...">
+            <select id="type-select">
+                <option value="">Filter by type...</option>
+                <option value="Public School">Public School</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Orphanage">Orphanage</option>
+                <option value="Charity">Charity</option>
+                <option value="Mosque">Mosque</option>
+                <option value="Church">Church</option>
+                <!-- Add more options as needed -->
+            </select>
+            <select id="area-select">
+                <option value="">Filter by area...</option>
+                <option value="Nasr-city">Nasr-city</option>
+                <option value="Haram">Haram</option>
+                <option value="Maadi">Maadi</option>
+                <option value="Montaza">Montaza</option>
+                <!-- Add more options as needed -->
+            </select>
+            <select id="governorate-select">
+                <option value="">Filter by governorate...</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Giza">Giza</option>
+                <option value="Alex">Alex</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <ul class="organization-list" id="organization-list">
+            <!-- Dynamic content will be added here -->
+        </ul>
+    </div>
+
+    <script>
+        // Sample organization data (replace with actual data)
+        var organizations = [
+            { name: "Harmony Health Organization", type: "Hospital", area: "Nasr-city", governorate: "Cairo" },
+            { name: "El-Awram", type: "Hospital", area: "Maadi", governorate: "Cairo" },
+            { name: "El-nas", type: "Hospital", area: "Maadi", governorate: "Cairo" },
+            { name: "Treatment", type: "Hospital", area: "Haram", governorate: "Giza" },
+            { name: "El-Eskandarya", type: "Hospital", area: "Montaza", governorate: "Alex" },
+            { name: "Future Education", type: "Public School", area: "Nasr-city", governorate: "Cairo" },
+            { name: "Pyramids school", type: "Public School", area: "Haram", governorate: "Giza" },
+            { name: "Primary Narmer", type: "Public School", area: "Maadi", governorate: "Cairo" },
+            { name: "NIS school", type: "Public School", area: "Haram", governorate: "Giza" },
+            { name: "See Pre-school", type: "Public School", area: "Montaza", governorate: "Alex" },
+            { name: "Dar el Sondos", type: "Orphanage", area: "Maadi", governorate: "Cairo" },
+            { name: "Tarbya", type: "Orphanage", area: "Montaza", governorate: "Alex" },
+            { name: "Resala", type: "Charity", area: "Nasr-city", governorate: "Cairo" },
+            { name: "Al-Rahman Al-Rahem", type: "Mosque", area: "Nasr-city", governorate: "Cairo" },
+            { name: "Al-Salam", type: "Mosque", area: "Maadi", governorate: "Cairo" },
+            { name: "Al-Eman", type: "Mosque", area: "Haram", governorate: "Giza" },
+            { name: "Al-Fatah", type: "Mosque", area: "Montaza", governorate: "Alex" },
+            { name: "Al-kanesa", type: "Church", area: "Maadi", governorate: "Cairo" },
+            { name: "Saint Mary", type: "Church", area: "Nasr-city", governorate: "Cairo" },
+            { name: "Al-Azraa", type: "Church", area: "Montaza", governorate: "Alex" },
+            { name: "Saint Teresa", type: "Church", area: "Haram", governorate: "Giza" },
+            // Add more organizations as needed
+        ];
+
+        var organizationList = document.getElementById("organization-list");
+
+        // Function to render organization list based on search and filter criteria
+        function renderOrganizationList() {
+            var searchInput = document.getElementById("search-input").value.toLowerCase();
+            var typeSelect = document.getElementById("type-select").value.toLowerCase();
+            var areaSelect = document.getElementById("area-select").value.toLowerCase();
+            var governorateSelect = document.getElementById("governorate-select").value.toLowerCase();
+
+            var filteredOrganizations = organizations.filter(function(org) {
+                return org.name.toLowerCase().includes(searchInput) &&
+                       (typeSelect === "" || org.type.toLowerCase() === typeSelect) &&
+                       (areaSelect === "" || org.area.toLowerCase() === areaSelect) &&
+                       (governorateSelect === "" || org.governorate.toLowerCase() === governorateSelect);
+            });
+
+            organizationList.innerHTML = "";
+
+            filteredOrganizations.forEach(function(org) {
+                var item = document.createElement("li");
+                item.classList.add("organization-item");
+                item.innerHTML = `
+                    <p><strong>Name:</strong> ${org.name}</p>
+                    <p><strong>Type:</strong> ${org.type}</p>
+                    <p><strong>Area:</strong> ${org.area}</p>
+                    <p><strong>Governorate:</strong> ${org.governorate}</p>
+                `;
+                organizationList.appendChild(item);
+            });
+        }
+
+        // Initial rendering of organization list
+        renderOrganizationList();
+
+        // Event listeners for search and filter input changes
+        document.getElementById("search-input").addEventListener("input", renderOrganizationList);
+        document.getElementById("type-select").addEventListener("change", renderOrganizationList);
+        document.getElementById("area-select").addEventListener("change", renderOrganizationList);
+        document.getElementById("governorate-select").addEventListener("change", renderOrganizationList);
+
+        document.getElementById('backToRequestsBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        history.back(); // Go back to the previous page
+    });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/Dashboard.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="dashboard-container">
+      <h2>Dashboard</h2>
+      <div class="button-container">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+      </div>
+      <div class="button-container">
+        <button class="dashboard-button" onclick="navigateTo('TeachingPosts.html')">Teaching Posts</button>
+        <button class="dashboard-button" onclick="navigateTo('subjects.html')">Pro-bono</button>
+        <button class="dashboard-button" onclick="navigateTo('donor_profile.html')">Manage account</button>
+        <button class="dashboard-button" onclick="navigateTo('AllRequests.html')">View requests</button>
+        <button class="dashboard-button" onclick="navigateTo('DonorViewDetailsOrganizationList.html')">Organizations details</button>
+        <button class="dashboard-button" onclick="navigateTo('DonorViewOrganization.html')">Registered Organization</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page; // Fixed the variable name in the URL assignment
+    }
+    document.getElementById('backToRequestsBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        history.back(); // Go back to the previous page
+    });
+  </script>
+</body>
+
+</html>

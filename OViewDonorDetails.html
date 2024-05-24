@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <a href="org_dash.html" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Donor Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Pictures/nada.jpg');
+            background-size: cover;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin: 10px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>View Donor Details</h2>
+        <table>
+            <tr>
+                <th>Donation Type</th>
+                <th>Donor Name</th>
+                <th>Acknowledge</th>
+                <th>View Contact Details</th>
+            </tr>
+            <tr>
+                <td>Medical Case</td>
+                <td>Dr. John Smith</td>
+                <td><button class="button" onclick="acknowledge('Dr. John Smith')">Acknowledge</button></td>
+                <td><button class="button" onclick="viewContactDetails('Dr. John Smith')">View Contact Details</button></td>
+            </tr>
+            <tr>
+                <td>Medical Case</td>
+                <td>Dr. Emily Johnson</td>
+                <td><button class="button" onclick="acknowledge('Dr. Emily Johnson')">Acknowledge</button></td>
+                <td><button class="button" onclick="viewContactDetails('Dr. Emily Johnson')">View Contact Details</button></td>
+            </tr>
+            <tr>
+                <td>Teaching Post</td>
+                <td>Mr. David Brown</td>
+                <td><button class="button" onclick="acknowledge('Mr. David Brown')">Acknowledge</button></td>
+                <td><button class="button" onclick="viewContactDetails('Mr. David Brown')">View Contact Details</button></td>
+            </tr>
+            <tr>
+                <td>Teaching Post</td>
+                <td>Ms. Sarah Wilson</td>
+                <td><button class="button" onclick="acknowledge('Ms. Sarah Wilson')">Acknowledge</button></td>
+                <td><button class="button" onclick="viewContactDetails('Ms. Sarah Wilson')">View Contact Details</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function acknowledge(donorName) {
+            window.location.href = 'donordetails.html?name=' + encodeURIComponent(donorName);
+        }
+
+        function viewContactDetails(donorName) {
+            window.location.href = 'Donorcontactdetails.html?name=' + encodeURIComponent(donorName);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical cases Requests</title>
+    <link rel="stylesheet" href="css/Medic.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/MED.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <div class="wrap-login100">
+            <form class="login100-form validate-form">
+                <header>
+                    <span class="login100-form-logo">
+                        <img src="vendor/logo.jpg" alt="Logo">
+                    </span>
+                    <h1>View Medical Cases Details</h1>
+                    <!-- Navigation or back button to return to the main page -->
+                    
+                    <header1>
+                        <a href="AllRequests.html" aria-label="Home"><i class="fas fa-home"></i> Home</a>
+                        <a href="index.html" id="logoutBtn" aria-label="Logout"><i class="fas fa-sign-out-alt"></i> Logout</a> <!-- Logout button -->
+
+                    </header1>
+                </header>
+            </form>
+        </div>
+    <main>
+        <div id="filterSection" class="grid-container">
+            <div>
+                <label for="Speciality_input">Medical Speciality:</label>
+                <input type="text" id="Speciality" onkeypress="if (!/^[a-zA-Z]*$/i.test(event.key)) event.preventDefault();" placeholder="Enter Medical Speciality">
+            </div>
+            <div>
+                <label for="organization_input">Organization name:</label>
+                <input type="text" id="organization_input" onkeypress="if (!/^[a-zA-Z]*$/i.test(event.key)) event.preventDefault();" placeholder="Enter Organization Name">
+            </div>
+            <div>
+                <label for="area_input">Area:</label>
+                <input type="text" id="Area" onkeypress="if (!/^[a-zA-Z]*$/i.test(event.key)) event.preventDefault();" placeholder="Enter Area">
+            </div>
+            <div>
+                <label for="governorate_input">Governorate:</label>
+                <input type="text" id="governorate" onkeypress="if (!/^[a-zA-Z]*$/i.test(event.key)) event.preventDefault();" placeholder="Enter Governorate">
+            </div>
+            <button id="filterBtn2">Filter</button>
+        </div>
+        
+        <div class="grid-container" id="MedicalGrid">
+            <!-- Donation requests and details links will be dynamically populated here -->
+        </div>
+        <div id="MedicalList">
+            <!-- Clothing donation requests will be dynamically populated here -->
+        </div>
+    </div>
+    
+    </main>
+</div>
+    <script src="js/medicalcases.js"></script> <!-- Link to your JavaScript file -->
+    
+</body>
+</html>

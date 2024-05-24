@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Donation Requests</title>
+    <link rel="stylesheet" href="css/MedicalStyles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/y.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <header>
+            <span class="login100-form-logo">
+                <img src="vendor/logo.jpg" alt="Logo">
+            </span>
+            <h1>Toy Donation Requests</h1>
+            <!-- Home page icon -->
+        
+            <header1>
+                <nav>
+                    <a href="AllRequests.html">Home</a>
+                    <a href="index.html">Logout</a>
+                </br>
+            </br>
+
+                </nav>
+            </header1>
+        </header>
+    <main>
+        <div id="filterSection">
+            <label for="ageFilter">Age:</label>
+            <select id="ageFilter">
+                
+                <option value="">All</option>
+                <option value="0-2">0-2</option>
+                <option value="3-5">3-5</option>
+                <option value="6-8">6-8</option>
+                <option value="9-12">9-12</option>
+                <option value="12+">12+</option>
+            </select>
+            
+            <label for="genderFilter">Gender:</label>
+            <select id="genderFilter">
+                <option value="">All</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="categoryFilter">Category:</label>
+            <select id="categoryFilter">
+                <option value="">All</option>
+                <option value="Board Games">Board Games</option>
+                <option value="Stuffed Toys">Stuffed Toys</option>
+                <option value="Dolls">Dolls</option>
+                <option value="Sports">Sports</option>
+                <option value="Cars">Cars</option>
+                <option value="Outdoor">Outdoor</option>
+            </select>
+
+            <button id="filterBtn">Filter</button>
+        </div>
+        <div class="grid-container" id="toyGrid">
+            <!-- Toy donation requests and details links will be dynamically populated here -->
+        </div>
+    </main>
+    </div>
+    <script src="js/Toys.js"></script>
+</body>
+</html>

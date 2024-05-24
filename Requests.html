@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Requests</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('Pictures/pp.jpg');">
+            <header>
+                <div class="logo-container">
+                    <a href="#" class="logo">
+                        <img src="vendor/logo.jpg" alt="Logo">
+                    </a>
+
+                </div>
+                <div class="logout-container">
+                    
+                    <div class="header-links-container">
+                        <nav>
+                            <h1>Welcome, Emily!</h1>
+                            <a href="index.html">Home</a>
+                            <a href="#">Logout</a>
+                            <a href="#">My Profile</a>
+                            <a href="Requests.html" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+                        </nav>
+                    </div>          </div>
+               
+            </header>
+    <main>
+        <div id="searchAndFilter">
+            <div id="searchBar">
+                <input type="text" id="searchInput" placeholder="Search for Category">
+                <button id="searchBtn">Search</button>
+            </div>
+        
+            <div id="filterSection">
+                <label for="categoryFilter">Select Category:</label>
+                <select id="categoryFilter"></select>
+                <button id="filterBtn">Filter</button>
+            </div>
+        </div>
+        <div class="grid-container" id="requestGrid">
+            <!-- All requests links will be dynamically populated here -->
+        </div>
+        <div id="requestsList">
+            <!-- Teaching posts will be dynamically populated here -->
+        </div>
+        <div id="errorMessage" style="display: none; color: red;"></div>
+    </main>
+</div>
+    <script src="js/AllRequests.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

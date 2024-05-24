@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Item Details</title>
+    <link rel="stylesheet" href="css/Bookdeets.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/deskss.jpg');">
+    <header>
+        <span class="login100-form-logo">
+            <img src="vendor/logo.jpg" alt="Logo">
+        </span>
+        <h1>Book Details</h1>
+        <!-- Home page icon -->
+    
+        <header1>
+            <nav>
+                <a href="Register.html">Home</a>
+                <a href="index.html">Logout</a>
+            </br>
+        </br>
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+
+            </nav>
+        </header1>
+    </header>
+    <main>
+        <div class="details-container">
+            <div class="details-content">
+                <h2 id="itemName"></h2>
+                <p>Book Name : <span id="BookName"></span></p>
+                <p>Author(s): <span id="Author"></span></p>
+                <p>Language(s): <span id="Langs"></span></p>
+                <p>Edition: <span id="edition"></span></p>
+                <p>Short Summary : <span id="Sum"></span></p>
+                <p>Quantity Requested: <span id="itemQuantity"></span></p>
+                <label for="quantityInput">Enter Quantity to Donate:</label>
+                <input type="number" id="quantityInput" min="1" placeholder="1"><br>
+                <button id="donation">Donate</button>
+              
+            </div>
+            <div class="details-image">
+                <img id="Pic"  alt="Book Image">
+            </div>
+        </div>
+    </main>
+</div>
+    <script src="js/BookDetails.js"></script> <!-- Link to your JavaScript file for details -->
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Item Details</title>
+    <link rel="stylesheet" href="css/food.css"> <!-- Link to your CSS file -->
+   
+
+</head>
+<body>
+    <div class="container-login100" style="background-image: url('Pictures/F.jpg');">
+        <a href="#" id="backToRequestsBtn" aria-label="Back"><i class="fas fa-arrow-left"></i> Back</a>
+
+        <header>
+            <span class="login100-form-logo">
+                <img src="vendor/logo.jpg" alt="Logo">
+            </span>
+            <h1>Food Donation Details</h1>
+            <!-- Home page icon -->
+            <header1>
+                <nav>
+                    <a href="AllRequests.html">Home</a>
+                    <a href="index.html">Logout</a>
+                </br>
+            </br>
+
+                </nav>
+            </header1>
+        </header>
+    <main>
+        <div id="foodDetails" class="food-details">
+            <p><strong>Item Name:</strong> <span id="itemName"></span></p>
+            <p><strong>Type:</strong> <span id="itemType"></span></p>
+            <p><strong>Quantity Required:</strong> <span id="itemQuantity"></span></p>
+           
+            <label id="quantityInputLabel" for="quantityInput"></label>
+            <input type="number" id="quantityInput" min="1" placeholder="1"><br>
+            <button id="donation">Donate</button>
+        </div>
+    </main>
+</div>
+<script src="js/FoodDetails.js"></script>
+</body>
+</html>

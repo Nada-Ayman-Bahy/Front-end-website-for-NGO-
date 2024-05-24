@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Pictures/nada.jpg'); /* Add background image URL */            background-size: cover; /* Cover the entire viewport */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            /*background-color: #f0f0f0;*/
+        }
+
+        .organization-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .organization-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .organization-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .organization-item {
+            margin-bottom: 10px;
+        }
+
+        .organization-item label {
+            display: block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .organization-item label:hover {
+            background-color: #e0e0e0;
+        }
+
+        .organization-item input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #007bff;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .organization-item input[type="radio"]:checked {
+            border-color: #000;
+            background-color: #000;
+        }
+
+        #view-details-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #view-details-button:hover {
+            background-color: #218838;
+        }
+        .navigation-buttons button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-buttons" style="text-align: center; margin-top: 20px;">
+        <button onclick="navigateBack()">&#9664;</button> <!-- Left arrow -->
+        <button onclick="navigateNext()">&#9654;</button> <!-- Right arrow -->
+    </div>
+    <div class="organization-container">
+        <h2>Organization List</h2>
+        <ul class="organization-list">
+            <li class="organization-item"><label><input type="radio" name="organization" value="Health Organization"> Harmony Health Organization</label></li>
+            <li class="organization-item"><label><input type="radio" name="organization" value="School Organization"> Future Education Organization</label></li>
+            <li class="organization-item"><label><input type="radio" name="organization" value="Refugee Organization"> Hope Haven Organization</label></li>
+            <li class="organization-item"><label><input type="radio" name="organization" value="Orphanage Organization"> Children's Home Organization</label></li>
+            <!-- Add more organizations as needed -->
+        </ul>
+        <button id="view-details-button" onclick="viewDetails()">View Details</button>
+    </div>
+
+    <script>
+        function viewDetails() {
+            var selectedOrganization = document.querySelector('input[name="organization"]:checked');
+            if (selectedOrganization) {
+                var organizationName = selectedOrganization.value;
+                // Redirect to organization details page with organizationName as a query parameter
+                window.location.href = 'organization_details.html?organization=' + encodeURIComponent(organizationName);
+            } else {
+                alert("Please select an organization.");
+            }
+        }
+        function navigateBack() {
+            // Navigate back in the history
+            window.history.back();
+            console.log("Navigating back.");
+        }
+
+        function navigateNext() {
+            // Navigate forward in the history
+            window.history.forward();
+            console.log("Navigating forward.");
+        }
+    </script>
+</body>
+</html>

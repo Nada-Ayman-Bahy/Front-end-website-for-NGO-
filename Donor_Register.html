@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- Designed by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Registration Form | CodingLab</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="registrationForm" action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="firstname" placeholder="Enter your firstname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="lastname" placeholder="Enter your lastname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          </div>
+        </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id="address" placeholder="Enter your address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Area</span>
+            <input type="text" id="area" placeholder="Enter your Area" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Governorate</span>
+            <input type="text" id="governorate" placeholder="Enter your Governorate" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contact Number</span>
+            <input type="text" id="contact" placeholder="Enter your Contact Number" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const firstNameInput = document.getElementById('firstname');
+    const lastNameInput = document.getElementById('lastname');
+    const emailInput = document.getElementById('email');
+    const areaInput = document.getElementById('area');
+    const governorateInput = document.getElementById('governorate');
+    const contactInput = document.getElementById('contact');
+  
+    form.addEventListener('submit', function(event) {
+      if (!isValidName(firstNameInput.value)) {
+        alert('Please enter a valid first name (only letters allowed).');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidName(lastNameInput.value)) {
+        alert('Please enter a valid last name (only letters allowed).');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidEmail(emailInput.value)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidName(areaInput.value)) {
+        alert('Please enter a valid area (only letters allowed).');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidName(governorateInput.value)) {
+        alert('Please enter a valid governorate (only letters allowed).');
+        event.preventDefault();
+        return;
+      }
+      if (!isValidContactNumber(contactInput.value)) {
+        alert('Please enter a valid contact number (only numbers allowed).');
+        event.preventDefault();
+        return;
+      }
+  
+      // If all validations pass, prevent the default form submission
+      event.preventDefault();
+  
+      // Redirect to index.html
+      window.location.href = 'index.html';
+    });
+  
+    function isValidName(name) {
+      return /^[a-zA-Z]+$/.test(name);
+    }
+    function isValidEmail(email) {
+      return /\S+@\S+\.\S+/.test(email);
+    }
+  
+    function isValidContactNumber(number) {
+      return /^\d+$/.test(number);
+    }
+  </script>
+  
+</body>
+</html>
